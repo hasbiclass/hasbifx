@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hasbifx | Portofolio</title>
+<meta id="md" name="description" content="Portofolio hasbifx. Membangun sistem web multi-role dan aplikasi mobile offline-first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&text=H&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+*{box-sizing:border-box;margin:0}
+:root{--bg:#fff;--fg:#000;--mut:#666;--soft:#f1f1f1;--ok:#22c55e;--grid:#0001}
+[data-theme=dark]{--bg:#000;--fg:#fff;--mut:#a3a3a3;--soft:#1a1a1a;--grid:#fff1}
+html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:clip}
+body{font:16px/1.6 'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden}
+a{color:inherit}button{font-family:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ok);outline-offset:2px}
+.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}.i.f{fill:currentColor}
+.w{max-width:1100px;margin:auto;padding:0 20px}
+section{padding:90px 0}
+h1,h2,h3{line-height:1;letter-spacing:-.03em}
+.st2{font-size:clamp(2rem,6vw,3.4rem);text-align:center;margin-bottom:36px}
+.dk{background:#000;color:#fff;--bg:#000;--fg:#fff;--mut:#a3a3a3;--soft:#1a1a1a}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:20;background:var(--bg);border-bottom:1px solid var(--grid)}
+header .w{display:flex;align-items:center;gap:8px;height:64px}
+.logo{width:40px;height:40px;display:grid;place-items:center;text-decoration:none;background:var(--bg);border:2px solid var(--fg);border-radius:12px;box-shadow:3px 3px 0 var(--fg);transition:transform .2s,box-shadow .2s}
+.logo b{font:italic 900 1.6rem/1 'Playfair Display',Georgia,'Times New Roman',serif;color:var(--fg);padding-right:2px;transition:transform .25s}
+.logo:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--fg)}
+.logo:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--fg)}
+.logo:hover b,.logo:active b{transform:rotate(-6deg) scale(1.08)}
+.rb{height:40px;min-width:40px;border:0;border-radius:99px;background:var(--soft);display:grid;place-items:center;cursor:pointer}
+nav{margin-left:auto;display:flex;gap:2px}
+nav a{padding:6px 12px;border-radius:99px;text-decoration:none;font-weight:700;font-size:.8rem;text-transform:uppercase}
+nav a:hover{background:var(--fg);color:var(--bg)}
+.tools{display:flex;gap:8px;margin-left:16px}
+#lang{display:flex;padding:4px;width:auto}.fl{width:32px;height:32px;border-radius:99px;display:grid;place-items:center;font-size:15px;opacity:.4;filter:grayscale(1)}
+.fl.on{background:var(--bg);opacity:1;filter:none;box-shadow:0 1px 4px #0004}
+#menu{display:none}
+/* hero */
+#home{min-height:100svh;display:flex;flex-direction:column;padding:64px 0 0}
+.hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:30px}
+.pr{display:flex;gap:6px;margin-bottom:8px;align-items:center}
+.pill{border:2px solid var(--fg);border-radius:99px;padding:5px 18px;font-weight:700;font-size:.7rem;background:var(--bg);box-shadow:0 3px 0 var(--fg);animation:drop .6s backwards;animation-delay:calc(var(--i)*.1s)}
+.cc{width:40px;height:40px;border:2px solid var(--fg);border-radius:50%;display:grid;place-items:center;background:var(--bg);box-shadow:0 3px 0 var(--fg);font-size:1.2rem;animation:drop .6s backwards;animation-delay:calc(var(--i)*.1s)}
+.cc.k{background:var(--fg);color:var(--bg)}
+@keyframes drop{from{opacity:0;transform:translateY(-26px) rotate(-5deg)}}
+h1{font-size:clamp(3rem,21vw,16rem);font-weight:700;line-height:.9;letter-spacing:-.055em;margin-left:-.04em}
+.ghost{font:10px/1.5 'Space Mono',monospace;color:var(--mut);opacity:.28;margin-top:22px;white-space:pre-wrap;word-break:break-all;max-height:84px;overflow:hidden}
+.bar{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--fg)}
+.bar div{padding:20px;border-right:2px solid var(--fg);display:flex;gap:8px;align-items:center;font-weight:700;font-size:clamp(.58rem,3.1vw,.8rem);text-transform:uppercase;white-space:nowrap;min-width:0}
+.bar div:first-child{white-space:normal;line-height:1.3;text-wrap:balance}
+.bar div:last-child{border:0}.bar .m{color:var(--mut);font-family:'Space Mono',monospace;font-weight:400;font-size:clamp(.54rem,2.8vw,.75rem)}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px #22c55e44}
+/* about */
+.card{border:2px solid var(--fg);border-radius:28px;padding:28px;background:var(--bg);box-shadow:5px 5px 0 var(--fg)}
+.btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;background:var(--fg);color:var(--bg);padding:12px 24px;border-radius:99px;font:700 .8rem 'Space Grotesk',sans-serif;text-decoration:none;text-transform:uppercase;letter-spacing:.1em;border:2px solid var(--fg);cursor:pointer}
+.btn.o{background:none;color:var(--fg)}.btn.w2{background:#fff;color:#000;border-color:#fff}
+.stack{display:grid;gap:26px;max-width:640px;margin:auto}
+.stack h3{font-size:1.9rem;margin:14px 0}.stack p{color:var(--mut);margin-bottom:20px}
+.me{aspect-ratio:4/5;border-radius:28px;border:2px solid var(--fg);box-shadow:5px 5px 0 var(--fg);background:radial-gradient(var(--fg) 1.3px,transparent 1.4px) 0 0/11px 11px,var(--bg);position:relative;overflow:hidden;display:grid;place-items:center}
+.me>b{font-size:7rem;letter-spacing:-.07em;margin-top:30px}.me img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}.me .cr{position:absolute;z-index:2;top:6%;left:52%;width:84px;height:49px;transform:translateX(-50%) rotate(-4deg);fill:#000}
+.hd{z-index:2;position:absolute;inset:auto 14px 14px;background:#333e;color:#fff;border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(4px)}
+.hd small{display:block;opacity:.7;font-size:.65rem;letter-spacing:.1em}.hd a{background:#fff;color:#000;padding:7px 16px;border-radius:8px;font-weight:700;font-size:.75rem;text-decoration:none;text-transform:uppercase}
+.ed{display:grid;gap:10px}.ed .top{display:flex;justify-content:space-between;align-items:center}
+.ico{width:44px;height:44px;border:2px solid var(--fg);border-radius:50%;display:grid;place-items:center;background:var(--soft)}
+.bdg{border:2px solid var(--fg);border-radius:8px;padding:2px 10px;font-size:.65rem;font-weight:700;text-transform:uppercase;background:var(--bg)}
+.lb{font-size:.65rem;letter-spacing:.14em;color:var(--mut);text-transform:uppercase;margin-top:6px}
+.ch span{display:inline-block;border:1px solid var(--mut);border-radius:8px;padding:2px 10px;margin:0 4px 6px 0;font-weight:500;font-size:.72rem;background:var(--bg)}
+.gpa{border-top:1px solid var(--mut);padding-top:14px;display:flex;align-items:baseline;gap:10px;font-size:3.4rem;font-weight:700;letter-spacing:-.05em}
+.gpa small{font-size:.65rem;letter-spacing:.05em;color:#2563eb;text-transform:uppercase;line-height:1.3}
+.focus{background:#8a8a8a;color:#fff;border-radius:28px;padding:28px;display:grid;gap:12px}
+.focus h3{font-size:1.5rem}.focus p{font-size:.9rem;opacity:.9}
+.focus div{border:1px solid #fff9;background:#fff3;border-radius:12px;padding:12px 16px;font-weight:500;display:flex;gap:10px;align-items:center}
+/* projects */
+.lead{color:var(--mut);max-width:520px;margin-bottom:44px}
+.pt{font-size:clamp(2.4rem,8vw,4.5rem);margin-bottom:14px}
+.grid{display:grid;gap:56px 28px;grid-template-columns:1fr 1fr}
+.tg span{display:inline-block;background:#1c1c1c;border:1px solid #2e2e2e;border-radius:6px;padding:4px 12px;margin:0 6px 6px 0;font-size:.72rem}
+summary{display:inline-flex;gap:8px;align-items:center;font-weight:700;cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+details p{color:var(--mut);font-size:.85rem;margin-top:8px}
+/* journey */
+#journey{background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/28px 28px}
+.tl{border-left:2px solid var(--fg);margin-left:10px;padding-left:22px;max-width:680px}
+.it{margin-bottom:10px}
+.jc{position:relative;border:2px solid var(--fg);border-radius:20px;padding:22px;background:var(--bg);box-shadow:6px 6px 0 var(--fg)}
+.nd{position:absolute;left:-31px;top:20px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--fg)}
+.pl{display:flex;gap:8px;margin-bottom:12px}.pl b,.pl span{border-radius:99px;padding:1px 12px;font-size:.7rem;font-weight:700;text-transform:uppercase}
+.pl b{background:var(--fg);color:var(--bg)}.pl span{background:var(--soft);color:var(--mut)}
+.jc h3{font-size:1.5rem}.org{display:flex;gap:6px;align-items:center;color:var(--mut);font-size:.75rem;text-transform:uppercase;margin:8px 0 12px}.org .i{width:14px;height:14px}
+.jc p{color:var(--mut);font-size:.9rem;border-bottom:1px solid var(--grid);padding-bottom:14px;margin-bottom:12px}
+.jc .tg span{background:var(--bg);border:1px solid var(--mut);color:var(--fg);font-size:.62rem;text-transform:uppercase;border-radius:4px;padding:2px 8px}
+.yr{text-align:center}.yt{padding:30px 0 22px}.yb{padding:4px 0 30px}
+.yn{position:relative;display:inline-block;font-size:clamp(3.6rem,13vw,5.5rem);font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:2px var(--fg)}
+.bd{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);background:var(--fg);color:var(--bg);width:38px;height:38px;border-radius:10px;display:grid;place-items:center;-webkit-text-stroke:0}
+.fd{display:grid;justify-items:center;background:none;border:0;cursor:pointer;margin:8px auto 0}.fd .i{width:76px;height:64px}
+.fd b{font-size:.7rem;letter-spacing:.14em}.fd small{color:var(--mut);font-size:.65rem}
+.ar{color:var(--mut);font-size:.8rem;margin-top:6px}
+/* contact */
+.cg{display:grid;gap:44px;grid-template-columns:1fr 1fr}
+.cg h2{font-size:clamp(2.6rem,8vw,4.6rem);margin-bottom:20px}.cg>div>p{color:var(--mut);font-size:1.15rem;max-width:460px}
+.cl{font-size:.65rem;letter-spacing:.16em;color:var(--mut);text-transform:uppercase;margin:30px 0 10px}
+.em{display:flex;gap:12px;align-items:center;border:1px solid #333;background:#0c0c0c;border-radius:14px;padding:14px 18px;font-weight:700;text-decoration:none;word-break:break-all}
+.soc{display:flex;gap:10px}.soc a{width:58px;height:58px;border:1px solid #333;background:#0c0c0c;border-radius:14px;display:grid;place-items:center}.soc a:hover{background:#fff;color:#000}
+form{display:grid;gap:18px;border:1px solid #333;border-radius:24px;padding:28px;background:#0a0a0a}
+label{display:grid;gap:8px;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+input,select,textarea{font:500 .95rem 'Space Grotesk',sans-serif;color:#fff;background:#000;border:1px solid #333;border-radius:12px;padding:14px;width:100%;letter-spacing:0;text-transform:none}
+footer{padding:28px 0;border-top:1px solid #222;font-size:.8rem;color:var(--mut);text-align:center}
+footer .w{display:grid;gap:4px}
+/* guestbook + blobs */
+#gbBtn{position:fixed;right:14px;bottom:calc(58px + env(safe-area-inset-bottom,0px));z-index:15;box-shadow:3px 3px 0 #000;background:#fff;color:#000;border:2px solid #000;padding:6px 12px;gap:6px;text-transform:none;letter-spacing:0;font-size:.68rem}
+#gbBtn .i{width:15px;height:15px}#gbBtn em{font-style:normal;background:#eee;border-radius:99px;padding:0 7px;font-size:.62rem}
+dialog{margin:auto;width:min(520px,100%);height:min(680px,92vh);border:2px solid var(--fg);border-radius:20px;padding:0;background:var(--bg);color:var(--fg);overflow:hidden}
+dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000a}
+.gh{display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--soft);border-bottom:2px solid var(--fg)}
+.gh .ico{border-radius:10px;background:#000;color:#fff;border:0;width:32px;height:32px}
+.gh .ico .i{width:15px;height:15px}
+.gh b{font:700 .95rem 'Space Mono',monospace}.live{background:#dcfce7;color:#15803d;font-size:.6rem;border:1px solid #86efac;border-radius:6px;padding:0 6px;margin-left:8px}
+.gh small{display:block;color:var(--mut);font-size:.75rem}
+.xb{margin-left:auto;width:34px;height:28px;border:2px solid var(--fg);border-radius:8px;background:var(--bg);box-shadow:2px 2px 0 var(--fg);display:grid;place-items:center;cursor:pointer}
+.xb .i{width:15px;height:15px}
+/* login panel + user bar */
+.ub{border-bottom:1px solid var(--grid)}
+.ub .row{display:flex;align-items:center;gap:8px;padding:8px 12px}
+.sp{padding:10px 12px 12px;display:grid;gap:8px;background:var(--soft)}
+.sp h4{display:flex;gap:6px;align-items:center;font-size:.85rem;font-weight:700}
+.sp h4 .i{width:16px;height:16px}
+.pbs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pb{display:flex;gap:6px;align-items:center;justify-content:center;padding:7px 8px;border-radius:10px;border:2px solid var(--fg);box-shadow:3px 3px 0 var(--fg);font:700 .8rem 'Space Grotesk',sans-serif;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.pb:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--fg)}
+.pb:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--fg)}
+.pb .i{width:14px;height:14px}
+.pbgh{background:#000;color:#fff}
+.pbgg{background:#fff;color:#000}
+.gg2{width:14px;height:14px;flex:none}
+.aer{color:#dc2626;font-size:.74rem;font-weight:500}
+.av{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;border:2px solid #ccc;overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+.un{min-width:0}.un b{display:flex;align-items:center;gap:6px;font-size:.9rem}.un small{display:block;color:var(--mut);font-size:.75rem;overflow:hidden;text-overflow:ellipsis}
+.so{margin-left:auto;background:none;border:0;color:var(--mut);font-weight:700;font-size:.8rem;display:flex;gap:6px;align-items:center;cursor:pointer;white-space:nowrap}
+.gg{width:13px;height:13px;flex:none}
+.dev{font:700 .58rem/1 'Space Mono',monospace;font-style:normal;background:var(--fg);color:var(--bg);border-radius:99px;padding:3px 8px;text-transform:uppercase}
+#gbList{flex:1;overflow:auto;padding:16px;display:grid;gap:18px;align-content:start}
+.msg{display:flex;gap:10px;align-items:flex-end}.msg.us{flex-direction:row-reverse}
+.mb{max-width:78%;display:grid;gap:4px;min-width:0}.us .mb{justify-items:end}
+.mn{display:flex;align-items:center;gap:6px;font-size:.8rem}
+.bu{border-radius:20px;padding:10px 16px;background:var(--soft);border:1px solid var(--grid);font-size:.9rem;overflow-wrap:anywhere}.bu p{margin:0}
+.ad .bu{background:var(--fg);color:var(--bg)}
+.qt{border-left:2px solid var(--mut);padding-left:8px;margin-bottom:8px;font-size:.72rem;opacity:.8;display:grid}
+.mt{display:flex;gap:10px;align-items:center;color:var(--mut);font-size:.68rem;flex-wrap:wrap}.us .mt{justify-content:flex-end}
+.mt button{background:none;border:0;color:inherit;cursor:pointer;font:inherit;display:flex;gap:4px;align-items:center}.mt .i{width:12px;height:12px}
+#gf{border:0;border-top:2px solid var(--fg);border-radius:0;padding:8px 12px;gap:6px;background:var(--bg)}
+#gf textarea{background:var(--bg);color:var(--fg);border:1px solid var(--mut);border-radius:12px;resize:none;padding:8px 12px;font-size:.84rem}
+#gf textarea:disabled{opacity:.6}
+.gn{color:var(--mut);font-size:.72rem;line-height:1.4;text-align:center}
+.gr{display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--mut);font-size:.7rem}
+#gf .btn{padding:6px 14px;font-size:.72rem;gap:6px;border-radius:99px;text-transform:none;letter-spacing:0;white-space:nowrap}#gf .btn .i{width:14px;height:14px}.gr span{white-space:nowrap}#gf .btn:disabled{background:#8a8a8a;border-color:#8a8a8a;color:#fff;cursor:not-allowed}
+#rt{display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--mut);background:var(--soft);border-radius:10px;padding:6px 10px}
+#rt[hidden]{display:none}#rt button{background:none;border:0;font-size:1.1rem;cursor:pointer;line-height:1}
+@media(max-width:760px){dialog{width:100%;max-width:none;height:100dvh;max-height:none;border:0;border-radius:0;margin:0}}
+.blobs{position:fixed;left:0;right:0;bottom:env(safe-area-inset-bottom,0px);height:0;z-index:12;pointer-events:none;--bb:#000;--be:#fff}
+[data-theme=dark] .blobs{--bb:#fff;--be:#000}
+.bl{position:absolute;left:0;bottom:0;width:50px;height:60px;pointer-events:auto;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;will-change:transform}
+.sh{position:absolute;left:2px;right:2px;bottom:-3px;height:7px;border-radius:50%;background:#0004;filter:blur(2px)}
+.jp{position:absolute;inset:0;transform-origin:50% 100%;animation:breathe 2.6s ease-in-out infinite}
+.bl.walk .jp{animation:bob .3s ease-in-out infinite}
+.bl.j .jp{animation:jump .8s ease-out}
+.bo{position:absolute;left:0;right:0;bottom:7px;height:49px;z-index:1;background:var(--bb);border-radius:17px 17px 6px 6px;transform:rotate(calc(var(--d,1)*var(--lean,0deg)));transform-origin:50% 100%;transition:transform .25s}
+.bl.walk{--lean:3deg}
+.ft{position:absolute;bottom:0;width:15px;height:11px;z-index:0;background:var(--bb);border-radius:50% 50% 45% 45%/65% 65% 35% 35%}
+.ft:first-of-type{left:7px}.ft:last-of-type{right:7px}
+.bl.walk .ft:first-of-type{animation:leg .6s ease-in-out infinite}
+.bl.walk .ft:last-of-type{animation:leg .6s ease-in-out -.3s infinite}
+.mg{position:absolute;right:-13px;top:-2px;width:14px;height:14px;fill:none;stroke:var(--bb);stroke-width:3.2;stroke-linecap:round}
+.ez{position:absolute;top:13px;left:0;right:0;display:flex;justify-content:center;gap:9px;transform:translateX(calc(var(--d,1)*4px));transition:transform .25s}
+.ez i{width:7px;height:12px;border-radius:5px;background:var(--be);animation:blink 4s infinite}
+.bl.j .ez i{width:9px;height:5px;background:none;border-top:2px solid var(--be);border-radius:50% 50% 0 0;animation:none;margin-top:4px}
+.bl.c .bo::after{content:"</>";position:absolute;left:-10px;bottom:6px;width:18px;height:18px;text-align:center;transform:rotate(-14deg);background:#fff;color:#000;border:2px solid #000;border-radius:6px;font:700 7px/14px 'Space Mono',monospace;letter-spacing:-.5px}
+.bl.j .bo::before{content:"👋";position:absolute;left:-8px;top:-16px;font-size:16px;animation:wave .45s ease-in-out 4}
+.sb{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(calc(-50% + var(--o,0px))) scale(.6);transform-origin:50% 100%;opacity:0;transition:opacity .2s,transform .2s;white-space:nowrap;background:#fff;color:#000;border:2px solid #000;border-radius:14px;padding:3px 12px;font:700 .7rem/1.5 'Space Grotesk',sans-serif;box-shadow:2px 2px 0 #000;pointer-events:none}
+.sb.on{opacity:1;transform:translateX(calc(-50% + var(--o,0px))) scale(1)}
+@keyframes breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.04,.96)}}
+@keyframes bob{0%,100%{transform:translateY(0) scale(1.03,.97)}50%{transform:translateY(-5px) scale(.97,1.03)}}
+@keyframes leg{0%,100%{transform:translate(calc(var(--d,1)*-3px),0)}25%{transform:translate(0,-2px)}50%{transform:translate(calc(var(--d,1)*3px),0)}}
+@keyframes jump{0%{transform:translateY(0) scale(1.14,.8)}30%{transform:translateY(-88px) scale(.9,1.12)}55%{transform:translateY(0) scale(1.14,.8)}72%{transform:translateY(-22px) scale(.96,1.04)}100%{transform:translateY(0) scale(1)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.1)}}
+@keyframes wave{0%,100%{transform:rotate(-15deg)}50%{transform:rotate(25deg)}}
+@media(max-width:760px){
+ nav{display:none;position:fixed;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);padding:8px 20px 24px;border-bottom:1px solid var(--grid)}
+ nav.open{display:flex}nav a{font-size:1rem;padding:14px 0;border-radius:0;border-bottom:1px solid var(--grid)}
+ #menu{display:grid}.tools{margin-left:auto}
+ .grid,.cg{grid-template-columns:1fr}section{padding:64px 0}.bar div{padding:18px 16px}
+ .bar{grid-template-columns:1fr 1fr}.bar div:nth-child(2){border-right:0}.bar div:nth-child(-n+2){border-bottom:2px solid var(--fg)}.bar div:nth-child(3){border-right:2px solid var(--fg)}
+}
+@media(prefers-reduced-motion:reduce){.pill,.cc{animation:none!important}html{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="i-snd" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4zM15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></symbol>
+<symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4zM22 9l-6 6M16 9l6 6"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4M2 6h4M2 10h4M2 14h4M2 18h4"/><path d="M21.4 5.6a1 1 0 1 0-3-3l-5 5a2 2 0 0 0-.5.9l-.8 2.9a.5.5 0 0 0 .6.6l2.9-.8a2 2 0 0 0 .9-.5z"/></symbol>
+<symbol id="i-term" viewBox="0 0 24 24"><path d="m5 8 5 4-5 4M12 17h7"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+<symbol id="i-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+<symbol id="i-rep" viewBox="0 0 24 24"><path d="m15 10 5 5-5 5M4 4v7a4 4 0 0 0 4 4h12"/></symbol>
+<symbol id="i-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.2 6.9-10.3 6.9-17.7z"/><path fill="#FBBC05" d="M10.5 28.7a14.5 14.5 0 0 1 0-9.4l-7.9-6.1a24 24 0 0 0 0 21.6z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.7-6c-2.1 1.4-4.9 2.3-8.2 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></symbol>
+<symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5M9 13h6M9 17h6"/></symbol>
+<symbol id="i-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="i-gh" viewBox="0 0 24 24"><path d="M9 19c-5 1.500-5-2.500-7-3m14 6v-3.900a3.400 3.400 0 0 0-.9-2.600c3.100-.3 6.400-1.500 6.400-7a5.400 5.400 0 0 0-1.500-3.700 5 5 0 0 0-.1-3.700s-1.200-.3-3.900 1.500a13.400 13.400 0 0 0-7 0C6.300 2.700 5.100 3 5.100 3a5 5 0 0 0-.1 3.700A5.400 5.400 0 0 0 3.500 10.400c0 5.400 3.300 6.600 6.400 7a3.400 3.400 0 0 0-.9 2.600V22"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"/><circle cx="12" cy="10" r="2.500"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5zM6 11v5c3 2.500 9 2.500 12 0v-5"/></symbol>
+<symbol id="i-lay" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/></symbol>
+<symbol id="i-fold" viewBox="0 0 24 24"><path d="M2 6a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+<symbol id="i-shd" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-tg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 10l-4 4l6 6l4-16l-18 7l4 2l2 6l3-4"/></symbol>
+</defs></svg>
+
+<header><div class="w">
+ <a class="logo" href="#home" aria-label="Home" data-ia="hmA"><b>H</b></a>
+ <nav id="nav">
+  <a href="#home" data-i="home">Home</a><a href="#about" data-i="about">About</a>
+  <a href="#journey" data-i="journey">Journey</a><a href="#guestbook" data-i="guest" onclick="openGb();return false">Guestbook</a><a href="#contact" data-i="contact">Contact</a>
+ </nav>
+ <div class="tools">
+  <button class="rb" id="snd" aria-label="Sound" data-ia="sndA"><svg class="i"><use href="#i-snd"/></svg></button>
+  <button class="rb" id="theme" aria-label="Dark mode" data-ia="thA"><svg class="i"><use href="#i-moon"/></svg></button>
+  <button class="rb" id="lang" aria-label="Language" data-ia="lgA"><span class="fl">🇺🇸</span><span class="fl">🇮🇩</span></button>
+  <button class="rb" id="menu" aria-label="Menu" data-ia="mnA"><svg class="i"><use href="#i-menu"/></svg></button>
+ </div>
+</div></header>
+
+<main>
+<section id="home" style="padding-bottom:0"><div class="w hero">
+ <div class="pr" style="justify-content:flex-end;padding-right:12%"><span class="pill" style="--i:0" data-i="pillSI">INFORMATION SYSTEMS</span></div>
+ <div class="pr" style="padding-left:6%"><span class="cc" style="--i:1">✱</span><span class="pill" style="--i:2">FREELANCER</span><span class="pill" style="--i:3">UI/UX</span></div>
+ <div class="pr"><span class="cc k" style="--i:4"><svg class="i"><use href="#i-code"/></svg></span><span class="pill" style="--i:5">TRADERS</span><span class="pill" style="--i:6">JUNIOR WEB DEVELOPER</span></div>
+ <h1>HASBIFX</h1>
+ <div class="ghost" aria-hidden="true">const INITIALIZE_SYSTEM = async () => { const Developer = { name: "HASBIFX", origin: "Banten_Indonesia", role: "Creative_Engineer", mindset: "Systematic_Thinking_With_Visual_Sensitivity" }; await System.load(["Next.js","React","TypeScript","Tailwind_CSS"]); if (Project.isComplex) return Developer.solve(Logic + Aesthetics); const Mission = "Crafting digital experiences that feel alive, intentional and purposeful"; };</div>
+</div>
+<div class="bar">
+ <div><span class="dot"></span><span data-i="open">Open to Collaboration</span></div>
+ <div class="m" data-i="base">Based in Banten, ID</div>
+ <div><span><span data-i="today">Today</span>:</span><span class="m" id="date"></span></div>
+ <div class="m"><span data-i="scroll">Scroll Down</span> ↓</div>
+</div></section>
+
+<section id="about"><div class="w">
+ <h2 class="st2" data-i="aboutT">About Me</h2>
+ <div class="stack">
+  <div class="card">
+   <span style="font-size:2rem;display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#000">👋</span>
+   <h3 data-i="hi">Hi, I'm hasbifx</h3>
+   <p data-i="p1"></p><p data-i="p2"></p>
+   <a class="btn" href="cv-areston-styfen.pdf" download="CV-hasbifx.pdf"><svg class="i"><use href="#i-doc"/></svg><span data-i="cv">Download Resume</span></a>
+  </div>
+  <!-- Ganti isi .me dengan <img src="foto.png"> untuk foto profil -->
+  <div class="me"><svg class="cr" viewBox="0 0 24 14"><path d=""/></svg><b></b><img src="hasbifx.jpg" alt="Foto hasbifx" onerror="this.remove()">
+   <div class="hd"><span>@hasbifx<small>ONLINE</small></span><a href="#contact" data-i="hire">Hire Me</a></div></div>
+  <div class="card ed">
+   <div class="top"><span class="ico"><svg class="i"><use href="#i-cap"/></svg></span><span class="bdg" data-i="grad">School 2026</span></div>
+   <div class="lb" data-i="uni">Jambi University</div><h3 style="font-size:1.4rem;margin:0" data-i="isT">Information Systems</h3>
+   <div class="lb" data-i="cw">Relevant Coursework:</div>
+   <div class="ch"><span data-i="c1">Web Programming</span><span data-i="c2">Database Systems</span><span data-i="c3">Software Engineering</span><span>Computer</span><span data-i="c5">System Analysis</span></div>
+   <div class="gpa"><small><span data-i="hs"></span><br><span data-i="gpa"></span></small></div>
+  </div>
+  <div class="card">
+   <h3 style="font-size:1.6rem;margin:0 0 6px">Tech Stack</h3>
+   <div class="lb" data-i="core">Core Languages</div><div class="ch"><span>HTML</span><span>CSS</span><span>PHP</span><span>Java</span><span>JavaScript</span><span>SQL</span></div>
+   <div class="lb">Frameworks &amp; UI</div><div class="ch"><span>Laravel</span><span>Next.js</span><span>React</span><span>Capacitor</span><span>Tailwind</span><span>Bootstrap</span></div>
+   <div class="lb">Tools &amp; Ecosystem</div><div class="ch"><span>Vite</span><span>Git</span><span>Notion</span><span>GitHub</span><span>Figma</span><span>Postman</span></div>
+  </div>
+  <div class="focus"><h3 data-i="fT">My Focus</h3><p data-i="fP">Combining system analysis with robust technical implementation. I focus on building efficient, user-centric web solutions from database design to final deployment.</p>
+   <div><svg class="i"><use href="#i-lay"/></svg><span data-i="f1">Full-Stack Systems</span></div><div><svg class="i"><use href="#i-lay"/></svg><span data-i="f2">Database Architecture</span></div></div></div>
+ </div>
+</div></section>
+
+<section id="journey"><div class="w">
+ <h2 class="st2" data-i="jT">My Journey</h2><p class="lead" data-i="jD" style="text-align:center;margin:-20px auto 40px"></p>
+ <div class="tl" id="tl"></div>
+</div></section>
+
+<section id="contact" class="dk"><div class="w cg">
+ <div>
+  <h2 data-i="cT">Let's Start a Project</h2><p data-i="cD"></p>
+  <div class="cl" data-i="dEm">Direct Email</div><a class="em" href="mailto:hasbifxtrde@gmail.com"><svg class="i"><use href="#i-mail"/></svg>hasbifxtrde@gmail.com</a>
+  <div class="cl" data-i="socT">Social Presence</div>
+  <div class="soc">
+   <a href="https://t.me/hasbifx" aria-label="Telegram"><svg class="i"><use href="#i-tg"/></svg></a>
+   <a href="https://github.com/StyfenSagaa" aria-label="GitHub"><svg class="i"><use href="#i-gh"/></svg></a>
+   <a href="https://www.instagram.com/hasbifx" aria-label="Instagram"><svg class="i"><use href="#i-ig"/></svg></a>
+  </div>
+ </div>
+ <form id="cf">
+  <label><span data-i="lbN">Your Name</span><input name="n" required placeholder="Sine Sensu"></label>
+  <label><span data-i="lbE">Your Email</span><input name="e" type="email" required placeholder="sinesnsu@example.com"></label>
+  <label><span data-i="lbS">Subject</span><select name="s"><option data-i="o1">Project Collaboration</option><option data-i="o2">Job Opportunity</option><option data-i="o3">General Inquiry</option></select></label>
+  <label><span data-i="lbM">Message</span><textarea name="m" rows="4" required placeholder="Tell me about your project..." data-ip="ph2"></textarea></label>
+  <button class="btn w2" data-i="send">Send Message</button>
+ </form>
+</div></section>
+</main>
+
+<footer class="dk"><div class="w"><span data-i="ft1">© 2026 hasbifx. All Rights Reserved.</span><span data-i="ft2">Based in Banten, ID · Available for Remote Work</span></div></footer>
+
+<div class="blobs" aria-hidden="true"><div class="bl c"><i class="sh"></i><div class="jp"><div class="bo"><span class="sb"></span><span class="ez"><i></i><i></i></span></div><i class="ft"></i><i class="ft"></i></div></div><div class="bl m"><i class="sh"></i><div class="jp"><div class="bo"><svg class="mg" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><span class="sb"></span><span class="ez"><i></i><i></i></span></div><i class="ft"></i><i class="ft"></i></div></div></div>
+<button class="btn" id="gbBtn" onclick="openGb()"><svg class="i"><use href="#i-pen"/></svg><span data-i="guest">Guestbook</span><em id="gbN">0</em></button>
+<dialog id="gb">
+ <div class="gh"><span class="ico"><svg class="i"><use href="#i-term"/></svg></span><div><b>~/guestbook.log<span class="live">LIVE</span></b><small><span id="gbT">0</span> <span id="gbS">total signatures</span></small></div>
+  <button class="xb" onclick="gb.close()" aria-label="Close" data-ia="clA"><svg class="i"><use href="#i-x"/></svg></button></div>
+ <div class="ub" id="ub"></div>
+ <div id="gbList"></div>
+ <form id="gf"><p class="gn" id="gn" hidden></p><p class="aer" id="gerr" hidden></p><div id="rt" hidden><span></span><button type="button" aria-label="Cancel reply" data-ia="rcA">×</button></div>
+  <textarea id="gm" maxlength="280" rows="2"></textarea>
+  <div class="gr"><span id="rem"></span><button class="btn" id="gpost" disabled><svg class="i"><use href="#i-send"/></svg><span id="gpt"></span></button></div></form>
+</dialog>
+
+<script>
+const $=s=>document.querySelector(s),R=document.documentElement;
+const S=(k,v)=>{try{return v===undefined?localStorage.getItem(k):localStorage.setItem(k,v)}catch(e){return null}};
+const SS=(k,v)=>{try{return v===undefined?sessionStorage.getItem(k):sessionStorage.setItem(k,v)}catch(e){return null}};
+const ic=(b,n)=>b.querySelector("use").setAttribute("href","#i-"+n);
+const T={en:{home:"Home",about:"About",journey:"Journey",guest:"Guestbook",contact:"Contact",open:"Open to Collaboration",base:"Based in Banten, ID",today:"Today",scroll:"Scroll Down",hire:"Contact",
+aboutT:"About Me",hi:"Hi, I'm hasbifx",p1:"I am a Junior Web Developer in the field of Information Systems. I like to bridge business needs with technological solutions through system flow analysis and web development using HTML, CSS, and JavaScript.",p2:"I usually sharpen my competitive mindset in the Land of Dawn. As a Mobile Legends player with Immortal Rank, I am used to thinking tactically, and constantly learning to be the best.",cv:"Download Resume",
+jT:"My Journey",jD:"Milestones of growth: from university labs to professional production environments.",
+cT:"Let's Start a Project",cD:"Interested in working together? Fill out the form or drop me a direct email.",lbN:"Your Name",lbE:"Your Email",lbS:"Subject",lbM:"Message",send:"Send Message"},
+id:{home:"Beranda",about:"Tentang",journey:"Perjalanan",guest:"Buku Tamu",contact:"Kontak",open:"Menerima Kolaborasi",base:"Berbasis di Banten, ID",today:"Hari ini",scroll:"Gulir ke Bawah",hire:"Hubungi",
+aboutT:"Tentang Saya",hi:"Hai, saya hasbifx.",p1:"Saya seorang Junior Web Developer di bidang Sistem Informasi. Saya suka menjembatani kebutuhan bisnis dengan solusi teknologi lewat analisis alur sistem dan pengembangan web menggunakan HTML, CSS, dan JavaScript.",p2:"Saya biasanya mengasah mental kompetitif saya di Land of Dawn. Sebagai pemain Mobile Legends dengan Rank Immortal, saya terbiasa berpikir taktis, dan terus belajar untuk menjadi yang terbaik.",cv:"Unduh CV",
+jT:"Perjalanan Saya",jD:"Tonggak pertumbuhan: dari lab kampus sampai lingkungan produksi profesional.",
+cT:"Mulai Proyek Bersama",cD:"Tertarik bekerja sama? Isi formulir atau kirim email langsung.",lbN:"Nama",lbE:"Email",lbS:"Subjek",lbM:"Pesan",send:"Kirim Pesan"}};
+let lang="en",snd=true;
+function setLang(l){lang=l;R.lang=l;
+ document.querySelectorAll("#lang .fl").forEach((s,i)=>s.classList.toggle("on",(i===0)===(l==="en")));
+ document.querySelectorAll("[data-i]").forEach(e=>{const v=T[l][e.dataset.i];if(v)e.textContent=v});
+ document.querySelectorAll("[data-ip]").forEach(e=>{const v=T[l][e.dataset.ip];if(v)e.placeholder=v});
+ document.querySelectorAll("[data-ia]").forEach(e=>{const v=T[l][e.dataset.ia];if(v)e.setAttribute("aria-label",v)});
+ $("#md").content=T[l].md;
+ $("#date").textContent=new Date().toLocaleDateString(l==="id"?"id-ID":"en-GB",{day:"numeric",month:"short",year:"numeric"}).toUpperCase()}
+let AC;
+function tn(f,d,o={}){if(!snd)return;try{AC=AC||new AudioContext();if(AC.state==="suspended")AC.resume();const n=AC.currentTime+(o.at||0),os=AC.createOscillator(),g=AC.createGain();os.type=o.type||"sine";os.connect(g);g.connect(AC.destination);os.frequency.setValueAtTime(f,n);if(o.to)os.frequency.exponentialRampToValueAtTime(o.to,n+d);g.gain.setValueAtTime(.0001,n);g.gain.exponentialRampToValueAtTime(o.v||.06,n+.01);g.gain.exponentialRampToValueAtTime(.0001,n+d);os.start(n);os.stop(n+d+.03)}catch(_){}}
+const seq=(fs,d,o={})=>fs.forEach((f,i)=>tn(f,d,{...o,at:i*d*.8}));
+const SFX={
+ click:()=>tn(900,.07,{to:1300,type:"triangle",v:.05}),
+ toggle:up=>up?seq([523,784],.13,{type:"triangle"}):seq([784,523],.13,{type:"triangle"}),
+ boing:i=>{const f=i?250:340;tn(f,.28,{to:f*2.6,type:i?"triangle":"sine",v:.07});tn(110,.14,{at:.55,to:55,v:.1})}
+};
+$("#lang").onclick=()=>{setLang(lang==="en"?"id":"en");drawGb();SFX.toggle(lang==="en")};
+$("#snd").onclick=e=>{if(snd){SFX.toggle(false);snd=false}else{snd=true;SFX.toggle(true)}ic(e.currentTarget,snd?"snd":"mute")};
+function setTheme(t){R.dataset.theme=t;ic($("#theme"),t==="dark"?"sun":"moon")}
+setTheme("light");
+$("#theme").onclick=()=>{setTheme(R.dataset.theme==="dark"?"light":"dark");SFX.toggle(R.dataset.theme!=="dark")};
+$("#menu").onclick=e=>{const o=$("#nav").classList.toggle("open");ic(e.currentTarget,o?"x":"menu");SFX.toggle(o)};
+$("#nav").onclick=e=>{if(e.target.tagName==="A"){$("#nav").classList.remove("open");ic($("#menu"),"menu")}};
+document.addEventListener("click",e=>{const t=e.target;if(t.closest("#snd,#theme,#lang,#menu,.bl"))return;if(t.closest("a,button,summary"))SFX.click()});
+const U=n=>`<svg class="i"><use href="#i-${n}"/></svg>`;
+
+// Data proyek: ganti kotak berwarna dengan <img> jika sudah punya screenshot
+Object.assign(T.en,{pillSI:"INFORMATION SYSTEMS",grad:"School 2026",isT:"Student",cw:"Major:",c1:"TJKT",c2:"Technique",c3:"Network",c4:"Computer",c5:"telecommunications",gpa:"",core:"Core Languages",fT:"My Focus",fP:"Combining system analysis with robust technical implementation. I focus on building efficient, user-centric web solutions from database design to final deployment.",f1:"Full-Stack Systems",f2:"Database Architecture",dEm:"Direct Email",socT:"Social Presence",o1:"Project Collaboration",o2:"Job Opportunity",o3:"General Inquiry",ph2:"Tell me about your project...",ft1:"© 2026 hasbi. All Rights Reserved.",ft2:"Based in Banten, ID · Available for Remote Work",arch:"PROJECT ARCHIVE",tap:"Tap to Open",nodoc:"Documentation has not been added yet.",md:"Portfolio of hasbifx. Building multi-role web systems and offline-first mobile apps.",hmA:"Home",sndA:"Sound",thA:"Dark mode",lgA:"Language",mnA:"Menu",clA:"Close",rcA:"Cancel reply",uni:"SMK PGRI 3 SERANG CITY"});
+Object.assign(T.id,{pillSI:"INFORMATION SYSTEMS",grad:"Sekolah 2026",isT:"Siswa",cw:"Jurusan:",c1:"TJKT",c2:"Teknik",c3:"Jaringan",c4:"Komputer",c5:"Telekomunikasi",gpa:"",core:"Core Languages",fT:"Fokus Saya",fP:"Memadukan analisis sistem dengan implementasi teknis yang kuat. Saya fokus membangun solusi web yang efisien dan berpusat pada pengguna, mulai dari desain database hingga peluncuran akhir.",f1:"Sistem Full-Stack",f2:"Arsitektur Database",dEm:"Email Langsung",socT:"Media Sosial",o1:"Kolaborasi Proyek",o2:"Peluang Kerja",o3:"Pertanyaan Umum",ph2:"Ceritakan tentang proyekmu...",ft1:"© 2026 hasbifx. Seluruh hak cipta dilindungi.",ft2:"Berbasis di Banten, ID · Tersedia untuk Kerja Remote",arch:"ARSIP PROYEK",tap:"Ketuk untuk Membuka",nodoc:"Dokumentasi belum ditambahkan.",md:"Portofolio hasbifx. Membangun sistem web multi-role dan aplikasi mobile offline-first.",hmA:"Beranda",sndA:"Suara",thA:"Mode gelap",lgA:"Bahasa",mnA:"Menu",clA:"Tutup",rcA:"Batal membalas",uni:"SMK PGRI 3 KOTA SERANG"});
+// Journey: [tahun, [EN: tag,judul,organisasi,deskripsi,[chip]], [ID: ...]]. Nama institusi/teknologi sama di kedua bahasa.
+const J=[
+["2026",["Professional","Junior Web & Mobile Developer","Independent Software Development","Designing and deploying end-to-end applications. Fully involved in the development of 'Nyawit' (an offline-first mobile app for agriculture) and institutional information systems.",["Next.js","Offline-First Mobile","Full-Stack","System Analysis"]],
+        ["Profesional","Junior Web & Mobile Developer","Pengembangan Perangkat Lunak Independen","Merancang dan merilis aplikasi end-to-end. Terlibat penuh dalam pengembangan 'Nyawit' (aplikasi mobile offline-first untuk pertanian) dan sistem informasi institusi.",["Next.js","Mobile Offline-First","Full-Stack","Analisis Sistem"]]],
+["2025",["Project Lead","Web System Architect","Pilmapres Information System, FST UNJA","Led the design of a multi-role web system to automate the selection and calculation of outstanding student assessment matrices, reducing human error by up to 90%.",["Laravel MVC","MySQL","Automation","Leadership"]],
+        ["Pemimpin Proyek","Arsitek Sistem Web","Sistem Informasi Pilmapres FST UNJA","Memimpin perancangan sistem web multi-peran untuk mengotomatisasi seleksi dan perhitungan matriks penilaian mahasiswa berprestasi, mengurangi kesalahan manusia hingga 90%.",["Laravel MVC","MySQL","Otomasi","Kepemimpinan"]]],
+["2024",["Experience","IT Support & UI/UX Redesign","BPTIK, Jambi Provincial Education Office","Responsible for internal server maintenance. Analyzed and executed UI/UX overhauls for the efficiency of the department's operational system.",["Server Maintenance","UI/UX Design","Figma","Troubleshooting"]],
+        ["Pengalaman","IT Support & Redesain UI/UX","BPTIK Dinas Pendidikan Prov. Jambi","Bertanggung jawab atas pemeliharaan server internal. Menganalisis dan menjalankan perombakan UI/UX demi efisiensi sistem operasional dinas.",["Pemeliharaan Server","Desain UI/UX","Figma","Troubleshooting"]]],
+["2023",["Contract / Project-Based","PIC Web Development","Kampung Wisata Berseri Eka Jaya","Led the digital platform development, integrating digital assets from 6 local MSMEs into a centralized hub to enhance regional tourism visibility.",["Team Leadership","Web Integration","WordPress","Stakeholder Management"]],
+        ["Kontrak / Berbasis Proyek","PIC Pengembangan Web","Kampung Wisata Berseri Eka Jaya","Memimpin pengembangan platform digital, mengintegrasikan aset digital dari 6 UMKM lokal ke dalam satu pusat terpadu untuk meningkatkan visibilitas pariwisata daerah.",["Kepemimpinan Tim","Integrasi Web","WordPress","Manajemen Stakeholder"]]]];
+J.forEach((j,i)=>["en","id"].forEach((L,k)=>{const d=j[k+1];Object.assign(T[L],{["j"+i+"a"]:d[0],["j"+i+"b"]:d[1],["j"+i+"c"]:d[2],["j"+i+"d"]:d[3]});d[4].forEach((c,x)=>T[L]["j"+i+"t"+x]=c)}));
+$("#tl").innerHTML=J.map((j,i)=>{const d=j[1];return `<div class="it"><div class="yr yt"><div class="yn">${j[0]}</div></div><article class="jc"><i class="nd"></i><div class="pl"><b>${j[0]}</b><span data-i="j${i}a">${d[0]}</span></div><h3 data-i="j${i}b">${d[1]}</h3><div class="org">${U("pin")}<span data-i="j${i}c">${d[2]}</span></div><p data-i="j${i}d">${d[3]}</p><div class="tg">${d[4].map((x,y)=>`<span data-i="j${i}t${y}">${x}</span>`).join("")}</div></article>
+</div>`}).join("");
+
+$("#cf").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+ location.href=`mailto:hasbifxtrde@gmail.com?subject=${encodeURIComponent(f.get("s"))}&body=${encodeURIComponent(f.get("m")+"\n\n— "+f.get("n")+" ("+f.get("e")+")")}`};
+
+/* ================= GUESTBOOK + LOGIN ================= */
+const ADMIN="hasbifxtrde@gmail.com";
+// Client ID boleh publik. Client Secret & service key JANGAN ditaruh di sini (hanya di Vercel).
+const GH_CLIENT_ID="GANTI_GITHUB_CLIENT_ID";
+const GG_CLIENT_ID="GANTI_GOOGLE_CLIENT_ID.apps.googleusercontent.com";
+const API={list:"/api/guestbook",send:"/api/guestbook",google:"/api/auth/google"};
+
+Object.assign(T.en,{reply:"Reply",out:"Sign Out",sigs:"total signatures",ph:"Leave your message or thought here... (max 280 chars)",phi:"Sign in to leave a message",rem:"characters remaining",post:"Post Message",none:"No messages yet. Be the first.",loading:"Loading messages...",repl:"Replying to",rp:"replies",
+ slT:"Sign In to Leave a Note",slN:"Please sign in with GitHub or Google above to leave a note.",aErr:"Sign-in failed or was cancelled. Please try again.",sendErr:"Could not send. Please try again.",slow:"Please wait a few seconds before posting again.",gone:"Your session expired. Please sign in again."});
+Object.assign(T.id,{reply:"Balas",out:"Keluar",sigs:"total tanda tangan",ph:"Tulis pesan atau pikiranmu di sini... (maks 280 karakter)",phi:"Masuk untuk menulis pesan",rem:"karakter tersisa",post:"Kirim Pesan",none:"Belum ada pesan. Jadilah yang pertama.",loading:"Memuat pesan...",repl:"Membalas",rp:"balasan",
+ slT:"Masuk untuk Menulis Pesan",slN:"Silakan masuk dengan GitHub atau Google di atas untuk menulis pesan.",aErr:"Gagal masuk atau dibatalkan. Silakan coba lagi.",sendErr:"Gagal mengirim. Silakan coba lagi.",slow:"Tunggu beberapa detik sebelum mengirim lagi.",gone:"Sesi login habis. Silakan masuk lagi."});
+
+const GL=k=>T[lang][k];
+const COL=["#6366f1","#16a34a","#ea580c","#0891b2","#db2777","#ca8a04"];
+const col=k=>k==="__admin"?"#9333ea":COL[[...String(k)].reduce((a,c)=>a+c.charCodeAt(0),0)%COL.length];
+const esc=x=>String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=t=>new Date(t).toLocaleString(lang==="id"?"id-ID":"en-US",{month:"short",day:"numeric",year:"numeric",hour:"numeric",minute:"2-digit"});
+const PV=p=>p==="github"?'<svg class="i gg"><use href="#i-gh"/></svg>':p==="google"?'<svg class="gg"><use href="#i-g"/></svg>':"";
+const AVT=(key,n,pic)=>`<span class="av" style="background:${col(key)}">${pic?`<img src="${esc(pic)}" alt="" referrerpolicy="no-referrer">`:esc(String(n||"?")[0])}</span>`;
+
+let G=[],A=null,RT=null,AERR=false,GERR="",SENDING=false,LAST="",LOADED=false;
+
+// Token = payload.tanda-tangan. Browser hanya membaca isinya untuk tampilan;
+// keaslian token dicek ulang oleh server setiap kali kirim pesan.
+const b64d=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/-/g,"+").replace(/_/g,"/")),c=>c.charCodeAt(0)));
+function readSession(t){
+ try{const u=JSON.parse(b64d(t.split(".")[0]));if(!u.exp||u.exp<Date.now())return null;return {n:u.n,e:u.e,a:u.a||"",p:u.p,t}}
+ catch(_){return null}}
+A=S("gbT")?readSession(S("gbT")):null;
+
+function upd(){const ta=$("#gm");$("#rem").textContent=(280-ta.value.length)+" "+GL("rem");
+ $("#gpost").disabled=!A||!ta.value.trim()||SENDING;ta.disabled=!A||SENDING;ta.placeholder=A?GL("ph"):GL("phi");$("#gpt").textContent=GL("post");
+ $("#gn").textContent=GL("slN");$("#gn").hidden=!!A;
+ $("#gerr").textContent=GERR;$("#gerr").hidden=!GERR;
+ const rt=$("#rt");rt.hidden=!RT;if(RT){const q=G.find(x=>x.id===RT);rt.firstChild.textContent=GL("repl")+" @"+(q?q.n:"")}}
+
+function drawGb(scroll){
+ $("#gbN").textContent=$("#gbT").textContent=G.length;$("#gbS").textContent=GL("sigs");
+ $("#ub").innerHTML=A
+  ?`<div class="row">${AVT(A.e===ADMIN?"__admin":A.n,A.n,A.a)}<div class="un"><b>${esc(A.n)} ${PV(A.p)}${A.e===ADMIN?'<i class="dev">DEV</i>':""}</b><small>${esc(A.e)}</small></div><button type="button" class="so" id="so"><svg class="i"><use href="#i-out"/></svg>${GL("out")}</button></div>`
+  :`<div class="sp"><h4><svg class="i"><use href="#i-shd"/></svg>${GL("slT")}</h4><div class="pbs"><button type="button" class="pb pbgh" data-p="github"><svg class="i"><use href="#i-gh"/></svg>GitHub</button><button type="button" class="pb pbgg" data-p="google"><svg class="gg2"><use href="#i-g"/></svg>Google</button></div><p class="aer" ${AERR?"":"hidden"}>${GL("aErr")}</p></div>`;
+ const l=$("#gbList");
+ l.innerHTML=G.length
+  ?G.map(g=>{const q=g.r&&G.find(x=>x.id===g.r),c=G.filter(x=>x.r===g.id).length;
+   return `<div class="msg ${g.dev?"ad":"us"}">${AVT(g.dev?"__admin":g.n,g.n,g.a)}<div class="mb"><div class="mn">${g.dev?'<i class="dev">DEV</i>':""}<b>${esc(g.n)}</b>${PV(g.p)}</div><div class="bu">${q?`<div class="qt"><b>@${esc(q.n)}</b><span>${esc(q.m)}</span></div>`:""}<p>${esc(g.m)}</p></div><div class="mt"><span>${fmt(g.t)}</span><button type="button" data-r="${g.id}"><svg class="i"><use href="#i-rep"/></svg>${GL("reply")}</button>${c?`<span>• ${c} ${GL("rp")}</span>`:""}</div></div></div>`}).join("")
+  :GL(LOADED?"none":"loading");
+ if(scroll)l.scrollTop=l.scrollHeight;
+ upd()}
+
+// Ambil semua pesan dari server. Kalau isinya sama dengan sebelumnya, tidak digambar ulang.
+async function loadGb(scroll){
+ try{
+  const r=await fetch(API.list,{cache:"no-store"});
+  if(!r.ok)return;
+  const list=await r.json(),s=JSON.stringify(list);
+  LOADED=true;
+  if(s===LAST&&!scroll)return;
+  const grew=list.length>G.length;
+  LAST=s;G=list;drawGb(scroll||grew);
+ }catch(_){}
+}
+
+function openGb(){gb.showModal();loadGb(true)}
+function saveSession(t){
+ const s=readSession(t);
+ if(!s){AERR=true;drawGb();return}
+ A=s;S("gbT",t);AERR=false;GERR="";drawGb();loadGb(false);
+}
+function fail(){AERR=true;drawGb()}
+
+function loginWith(p){
+ AERR=false;
+ if(p==="github"){
+  // state acak mencegah login-CSRF; dicek lagi saat kembali dari GitHub
+  const st=[...crypto.getRandomValues(new Uint8Array(16))].map(b=>b.toString(16).padStart(2,"0")).join("");
+  SS("gbState",st);
+  location.href="https://github.com/login/oauth/authorize?"+new URLSearchParams({client_id:GH_CLIENT_ID,scope:"read:user user:email",state:st,allow_signup:"true"});
+  return}
+ // Google: popup (Google Identity Services). Access token dikirim ke server untuk ditukar token login.
+ if(!window.google?.accounts?.oauth2){fail();return}
+ google.accounts.oauth2.initTokenClient({
+  client_id:GG_CLIENT_ID,
+  scope:"openid email profile",
+  callback:async r=>{
+   if(!r||!r.access_token){fail();return}
+   try{
+    const res=await fetch(API.google,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({access_token:r.access_token})});
+    if(!res.ok)throw 0;
+    const {token}=await res.json();
+    saveSession(token);
+   }catch(_){fail()}
+  },
+  error_callback:fail
+ }).requestAccessToken();
+}
+
+// Baca hasil login GitHub dari URL (#auth=...&state=...) lalu bersihkan hash
+function fromHash(){
+ const h=new URLSearchParams(location.hash.slice(1));
+ if(!h.has("auth")&&!h.has("autherr"))return false;
+ history.replaceState(null,"",location.pathname+location.search);
+ const want=SS("gbState");try{sessionStorage.removeItem("gbState")}catch(_){}
+ if(h.has("autherr")||!want||h.get("state")!==want){AERR=true;return true}
+ saveSession(h.get("auth")||"");
+ return true}
+
+$("#ub").addEventListener("click",e=>{
+ if(e.target.closest("#so")){A=null;RT=null;AERR=false;GERR="";S("gbT","");drawGb();return}
+ const p=e.target.closest("[data-p]");if(p)loginWith(p.dataset.p)});
+$("#gbList").addEventListener("click",e=>{const b=e.target.closest("[data-r]");if(b){RT=+b.dataset.r;upd();$("#gm").focus()}});
+$("#rt button").onclick=()=>{RT=null;upd()};$("#gm").oninput=upd;
+
+$("#gf").onsubmit=async e=>{
+ e.preventDefault();
+ const m=$("#gm").value.trim();if(!A||!m||SENDING)return;
+ SENDING=true;GERR="";upd();
+ let ok=false;
+ try{
+  const r=await fetch(API.send,{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+A.t},body:JSON.stringify({message:m,reply_to:RT||null})});
+  if(r.status===401){A=null;S("gbT","");GERR=GL("gone")}
+  else if(r.status===429)GERR=GL("slow");
+  else if(!r.ok)GERR=GL("sendErr");
+  else ok=true;
+ }catch(_){GERR=GL("sendErr")}
+ SENDING=false;
+ if(ok){$("#gm").value="";RT=null;GERR="";LAST="";upd();await loadGb(true)}
+ else{drawGb(false)}
+};
+
+setInterval(()=>{if(gb.open)loadGb(false)},15000);
+
+const MSG={en:["Yay! 🎉","Hello! 👋","Sign the guestbook! ✍️","Contact me! 💼","Boing! 🦘","Welcome! ✨"],id:["Hore! 🎉","Halo! 👋","Isi buku tamu! ✍️","Rekrut saya! 💼","Hop! 🦘","Selamat datang! ✨"]};
+const bls=[...document.querySelectorAll(".bl")];let lastM="";
+const pick=()=>{const a=MSG[lang];let m;do{m=a[Math.floor(Math.random()*a.length)]}while(m===lastM);return lastM=m};
+function say(b,txt,ms){const s=b.querySelector(".sb");s.textContent=txt;s.style.setProperty("--o","0px");s.classList.add("on");
+ const w=s.offsetWidth,c=b.x+25;let o=0;if(c-w/2<6)o=6-(c-w/2);else if(c+w/2>innerWidth-6)o=innerWidth-6-(c+w/2);
+ s.style.setProperty("--o",o+"px");b.pu=performance.now()+ms;clearTimeout(b.st);b.st=setTimeout(()=>s.classList.remove("on"),ms)}
+bls.forEach((b,i)=>{b.x=24+i*80;b.v=i?-30:38;b.pu=0;b.nx=2000;
+ b.onpointerdown=e=>{e.preventDefault();b.classList.remove("j","walk");void b.offsetWidth;b.classList.add("j");b.jumping=true;SFX.boing(i);say(b,pick(),2400)};
+ b.addEventListener("animationend",e=>{if(e.animationName==="jump"){b.classList.remove("j");b.jumping=false}})});
+let lt=0;
+function tick(t){const dt=Math.min((t-lt)/1000,.05);lt=t;const mx=document.documentElement.clientWidth-66;
+ bls.forEach(b=>{if(b.jumping||t<b.pu)b.classList.remove("walk");else{b.classList.add("walk");const o=bls[0]===b?bls[1]:bls[0],nx=b.x+b.v*dt;if(Math.abs(nx-o.x)<56&&Math.abs(nx-o.x)<Math.abs(b.x-o.x)){b.v=-b.v;b.pu=t+600}else b.x=nx;
+  if(b.x<14){b.x=14;b.v=Math.abs(b.v)}else if(b.x>mx){b.x=mx;b.v=-Math.abs(b.v)}
+  if(t>b.nx){b.nx=t+1800+Math.random()*3200;const r=Math.random();if(r<.3)b.pu=t+800+Math.random()*1400;else if(r<.55)b.v=-b.v}}
+  b.style.transform=`translateX(${b.x}px)`;b.style.setProperty("--d",b.v>0?1:-1)});
+ requestAnimationFrame(tick)}
+requestAnimationFrame(tick);
+setTimeout(()=>say(bls[0],MSG[lang][5],2600),900);
+setInterval(()=>{const b=bls[Math.floor(Math.random()*bls.length)];if(!b.jumping&&performance.now()>b.pu)say(b,pick(),2200)},6000);
+
+const hadAuth=fromHash();
+drawGb(false);setLang(lang);
+if(hadAuth)gb.showModal();
+loadGb(false);
+</script>
+</body>
+</html>
