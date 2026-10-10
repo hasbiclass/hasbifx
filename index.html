@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>hasbifx</title>
+<title>hasbifx | Portofolio</title>
 <meta id="md" name="description" content="Portofolio hasbifx. Membangun sistem web multi-role dan aplikasi mobile offline-first.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&text=H&display=swap" rel="stylesheet">
@@ -476,7 +476,7 @@ function loginWith(p){
    }catch(_){fail()}
   },
   error_callback:fail
- }).requestAccessToken();
+ }).requestAccessToken({prompt:"select_account"});
 }
 
 // Baca hasil login GitHub dari URL (#auth=...&state=...) lalu bersihkan hash
