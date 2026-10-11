@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>hasbifx portofolio</title>
+<title>hasbifx</title>
 <meta id="md" name="description" content="Portofolio hasbifx. Membangun sistem web multi-role dan aplikasi mobile offline-first.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&text=H&display=swap" rel="stylesheet">
@@ -26,11 +26,13 @@ h1,h2,h3{line-height:1;letter-spacing:-.03em}
 /* header */
 header{position:fixed;inset:0 0 auto;z-index:20;background:var(--bg);border-bottom:1px solid var(--grid)}
 header .w{display:flex;align-items:center;gap:8px;height:64px}
-.logo{width:40px;height:40px;display:grid;place-items:center;text-decoration:none;background:var(--bg);border:2px solid var(--fg);border-radius:12px;box-shadow:3px 3px 0 var(--fg);transition:transform .2s,box-shadow .2s}
-.logo b{font:italic 900 1.6rem/1 'Playfair Display',Georgia,'Times New Roman',serif;color:var(--fg);padding-right:2px;transition:transform .25s}
-.logo:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--fg)}
+.logo{width:45px;height:45px;display:flex;align-items:center;justify-content:center;text-decoration:none;background:var(--bg);border:2px solid var(--fg);border-radius:12px;box-shadow:3px 3px 0 var(--fg);transition:transform .2s,box-shadow .2s,background .2s}
+.logo svg{width:25px;height:25px;display:block;transition:transform .25s}
+.logo .h{fill:var(--fg);transition:fill .2s}
+.logo:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--fg);background:var(--fg)}
+.logo:hover .h{fill:var(--bg)}
+.logo:hover svg,.logo:active svg{transform:scale(1.08)}
 .logo:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--fg)}
-.logo:hover b,.logo:active b{transform:rotate(-6deg) scale(1.08)}
 .rb{height:40px;min-width:40px;border:0;border-radius:99px;background:var(--soft);display:grid;place-items:center;cursor:pointer}
 nav{margin-left:auto;display:flex;gap:2px}
 nav a{padding:6px 12px;border-radius:99px;text-decoration:none;font-weight:700;font-size:.8rem;text-transform:uppercase}
@@ -226,7 +228,7 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
 </defs></svg>
 
 <header><div class="w">
- <a class="logo" href="#home" aria-label="Home" data-ia="hmA"><b>H</b></a>
+<a class="logo" href="#home" aria-label="Home" data-ia="hmA"><svg viewBox="366 381 350 341" aria-hidden="true"><path class="h" d="M368 381H516V412L478 419V528H604V419L570 412V381H716V412L682 419V686L716 692V722H570V692L604 686V568H478V686L516 692V722H366V692L400 686V419L368 412Z"/></svg></a>
  <nav id="nav">
   <a href="#home" data-i="home">Home</a><a href="#about" data-i="about">About</a>
   <a href="#journey" data-i="journey">Journey</a><a href="#guestbook" data-i="guest" onclick="openGb();return false">Guestbook</a><a href="#contact" data-i="contact">Contact</a>
@@ -242,13 +244,13 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
 <main>
 <section id="home" style="padding-bottom:0"><div class="w hero">
  <div class="pr" style="justify-content:flex-end;padding-right:12%"><span class="pill" style="--i:0" data-i="pillSI">INFORMATION SYSTEMS</span></div>
- <div class="pr" style="padding-left:6%"><span class="cc" style="--i:1">✱</span><span class="pill" style="--i:2">FREELANCER</span><span class="pill" style="--i:3">UI/UX</span></div>
+ <div class="pr" style="padding-left:6%"><span class="cc" style="--i:1">✱</span><span class="pill" style="--i:2">CREATOR</span><span class="pill" style="--i:3">UI/UX</span></div>
  <div class="pr"><span class="cc k" style="--i:4"><svg class="i"><use href="#i-code"/></svg></span><span class="pill" style="--i:5">TRADERS</span><span class="pill" style="--i:6">JUNIOR WEB DEVELOPER</span></div>
  <h1>HASBIFX</h1>
  <div class="ghost" aria-hidden="true">const INITIALIZE_SYSTEM = async () => { const Developer = { name: "HASBIFX", origin: "Banten_Indonesia", role: "Creative_Engineer", mindset: "Systematic_Thinking_With_Visual_Sensitivity" }; await System.load(["Next.js","React","TypeScript","Tailwind_CSS"]); if (Project.isComplex) return Developer.solve(Logic + Aesthetics); const Mission = "Crafting digital experiences that feel alive, intentional and purposeful"; };</div>
 </div>
 <div class="bar">
- <div><span class="dot"></span><span data-i="open">Open to Collaboration</span></div>
+ <div><span class="dot"></span><span data-i="open">Open Collaboration</span></div>
  <div class="m" data-i="base">Based in Banten, ID</div>
  <div><span><span data-i="today">Today</span>:</span><span class="m" id="date"></span></div>
  <div class="m"><span data-i="scroll">Scroll Down</span> ↓</div>
@@ -270,7 +272,7 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
    <div class="top"><span class="ico"><svg class="i"><use href="#i-cap"/></svg></span><span class="bdg" data-i="grad">School 2026</span></div>
    <div class="lb" data-i="uni">Jambi University</div><h3 style="font-size:1.4rem;margin:0" data-i="isT">Information Systems</h3>
    <div class="lb" data-i="cw">Relevant Coursework:</div>
-   <div class="ch"><span data-i="c1">Web Programming</span><span data-i="c2">Database Systems</span><span data-i="c3">Software Engineering</span><span>Computer</span><span data-i="c5">System Analysis</span></div>
+   <div class="ch"><span data-i="c1">Web Programming</span><span data-i="c2">Database Systems</span><span data-i="c3">Software Engineering</span><span data-i="c4">Computer</span><span data-i="c5">System Analysis</span></div>
    <div class="gpa"><small><span data-i="hs"></span><br><span data-i="gpa"></span></small></div>
   </div>
   <div class="card">
@@ -329,7 +331,7 @@ const $=s=>document.querySelector(s),R=document.documentElement;
 const S=(k,v)=>{try{return v===undefined?localStorage.getItem(k):localStorage.setItem(k,v)}catch(e){return null}};
 const SS=(k,v)=>{try{return v===undefined?sessionStorage.getItem(k):sessionStorage.setItem(k,v)}catch(e){return null}};
 const ic=(b,n)=>b.querySelector("use").setAttribute("href","#i-"+n);
-const T={en:{home:"Home",about:"About",journey:"Journey",guest:"Guestbook",contact:"Contact",open:"Open to Collaboration",base:"Based in Banten, ID",today:"Today",scroll:"Scroll Down",hire:"Contact",
+const T={en:{home:"Home",about:"About",journey:"Journey",guest:"Guestbook",contact:"Contact",open:"Open Collaboration",base:"Based in Banten, ID",today:"Today",scroll:"Scroll Down",hire:"Contact",
 aboutT:"About Me",hi:"Hi, I'm hasbifx",p1:"I am a Junior Web Developer in the field of Information Systems. I like to bridge business needs with technological solutions through system flow analysis and web development using HTML, CSS, and JavaScript.",p2:"I usually sharpen my competitive mindset in the Land of Dawn. As a Mobile Legends player with Immortal Rank, I am used to thinking tactically, and constantly learning to be the best.",cv:"Download Resume",
 jT:"My Journey",jD:"Milestones of growth: from university labs to professional production environments.",
 cT:"Let's Start a Project",cD:"Interested in working together? Fill out the form or drop me a direct email.",lbN:"Your Name",lbE:"Your Email",lbS:"Subject",lbM:"Message",send:"Send Message"},
@@ -368,14 +370,14 @@ Object.assign(T.en,{pillSI:"INFORMATION SYSTEMS",grad:"School 2026",isT:"Student
 Object.assign(T.id,{pillSI:"INFORMATION SYSTEMS",grad:"Sekolah 2026",isT:"Siswa",cw:"Jurusan:",c1:"TJKT",c2:"Teknik",c3:"Jaringan",c4:"Komputer",c5:"Telekomunikasi",gpa:"",core:"Core Languages",fT:"Fokus Saya",fP:"Memadukan analisis sistem dengan implementasi teknis yang kuat. Saya fokus membangun solusi web yang efisien dan berpusat pada pengguna, mulai dari desain database hingga peluncuran akhir.",f1:"Sistem Full-Stack",f2:"Arsitektur Database",dEm:"Email Langsung",socT:"Media Sosial",o1:"Kolaborasi Proyek",o2:"Peluang Kerja",o3:"Pertanyaan Umum",ph2:"Ceritakan tentang proyekmu...",ft1:"© 2026 hasbifx. Seluruh hak cipta dilindungi.",ft2:"Berbasis di Banten, ID · Tersedia untuk Kerja Remote",arch:"ARSIP PROYEK",tap:"Ketuk untuk Membuka",nodoc:"Dokumentasi belum ditambahkan.",md:"Portofolio hasbifx. Membangun sistem web multi-role dan aplikasi mobile offline-first.",hmA:"Beranda",sndA:"Suara",thA:"Mode gelap",lgA:"Bahasa",mnA:"Menu",clA:"Tutup",rcA:"Batal membalas",uni:"SMK PGRI 3 KOTA SERANG"});
 // Journey: [tahun, [EN: tag,judul,organisasi,deskripsi,[chip]], [ID: ...]]. Nama institusi/teknologi sama di kedua bahasa.
 const J=[
-["2026",["Professional","Junior Web & Mobile Developer","Independent Software Development","Designing and deploying end-to-end applications. Fully involved in the development of 'Nyawit' (an offline-first mobile app for agriculture) and institutional information systems.",["Next.js","Offline-First Mobile","Full-Stack","System Analysis"]],
-        ["Profesional","Junior Web & Mobile Developer","Pengembangan Perangkat Lunak Independen","Merancang dan merilis aplikasi end-to-end. Terlibat penuh dalam pengembangan 'Nyawit' (aplikasi mobile offline-first untuk pertanian) dan sistem informasi institusi.",["Next.js","Mobile Offline-First","Full-Stack","Analisis Sistem"]]],
-["2025",["Project Lead","Web System Architect","Pilmapres Information System, FST UNJA","Led the design of a multi-role web system to automate the selection and calculation of outstanding student assessment matrices, reducing human error by up to 90%.",["Laravel MVC","MySQL","Automation","Leadership"]],
-        ["Pemimpin Proyek","Arsitek Sistem Web","Sistem Informasi Pilmapres FST UNJA","Memimpin perancangan sistem web multi-peran untuk mengotomatisasi seleksi dan perhitungan matriks penilaian mahasiswa berprestasi, mengurangi kesalahan manusia hingga 90%.",["Laravel MVC","MySQL","Otomasi","Kepemimpinan"]]],
-["2024",["Experience","IT Support & UI/UX Redesign","BPTIK, Jambi Provincial Education Office","Responsible for internal server maintenance. Analyzed and executed UI/UX overhauls for the efficiency of the department's operational system.",["Server Maintenance","UI/UX Design","Figma","Troubleshooting"]],
-        ["Pengalaman","IT Support & Redesain UI/UX","BPTIK Dinas Pendidikan Prov. Jambi","Bertanggung jawab atas pemeliharaan server internal. Menganalisis dan menjalankan perombakan UI/UX demi efisiensi sistem operasional dinas.",["Pemeliharaan Server","Desain UI/UX","Figma","Troubleshooting"]]],
-["2023",["Contract / Project-Based","PIC Web Development","Kampung Wisata Berseri Eka Jaya","Led the digital platform development, integrating digital assets from 6 local MSMEs into a centralized hub to enhance regional tourism visibility.",["Team Leadership","Web Integration","WordPress","Stakeholder Management"]],
-        ["Kontrak / Berbasis Proyek","PIC Pengembangan Web","Kampung Wisata Berseri Eka Jaya","Memimpin pengembangan platform digital, mengintegrasikan aset digital dari 6 UMKM lokal ke dalam satu pusat terpadu untuk meningkatkan visibilitas pariwisata daerah.",["Kepemimpinan Tim","Integrasi Web","WordPress","Manajemen Stakeholder"]]]];
+["2026",["Professional","Junior Web & Mobile Developer","Gunungsari Serang-Banten","Designing and deploying end-to-end applications. Fully involved in the development of 'Nyawit' (an offline-first mobile app for agriculture) and institutional information systems.",["Next.js","Offline-First Mobile","Full-Stack","System Analysis"]],
+        ["Profesional","Junior Web & Mobile Developer","Gunungsari Serang-Banten","Merancang dan merilis aplikasi end-to-end. Terlibat penuh dalam pengembangan 'Nyawit' (aplikasi mobile offline-first untuk pertanian) dan sistem informasi institusi.",["Next.js","Mobile Offline-First","Full-Stack","Analisis Sistem"]]],
+["2025",["Project Lead","Web System Architect","Seranh City","Led the design of a multi-role web system to automate the selection and calculation of outstanding student assessment matrices, reducing human error by up to 90%.",["Laravel MVC","MySQL","Automation","Leadership"]],
+        ["Pemimpin Proyek","Arsitek Sistem Web","Kota Serang","Memimpin perancangan sistem web multi-peran untuk mengotomatisasi seleksi dan perhitungan matriks penilaian mahasiswa berprestasi, mengurangi kesalahan manusia hingga 90%.",["Laravel MVC","MySQL","Otomasi","Kepemimpinan"]]],
+["2024",["Experience","IT Support & UI/UX Redesign","Serang City","Responsible for internal server maintenance. Analyzed and executed UI/UX overhauls for the efficiency of the department's operational system.",["Server Maintenance","UI/UX Design","Figma","Troubleshooting"]],
+        ["Pengalaman","IT Support & Redesain UI/UX","Kota Serang","Bertanggung jawab atas pemeliharaan server internal. Menganalisis dan menjalankan perombakan UI/UX demi efisiensi sistem operasional dinas.",["Pemeliharaan Server","Desain UI/UX","Figma","Troubleshooting"]]],
+["2023",["Contract","PIC Web Development","Gunungsari Serang-Banten","Led the digital platform development, integrating digital assets from 6 local MSMEs into a centralized hub to enhance regional tourism visibility.",["Team Leadership","Web Integration","WordPress","Stakeholder Management"]],
+        ["Kontrak","PIC Pengembangan Web","Gunungsari Serang-Banten","Memimpin pengembangan platform digital, mengintegrasikan aset digital dari 6 UMKM lokal ke dalam satu pusat terpadu untuk meningkatkan visibilitas pariwisata daerah.",["Kepemimpinan Tim","Integrasi Web","WordPress","Manajemen Stakeholder"]]]];
 J.forEach((j,i)=>["en","id"].forEach((L,k)=>{const d=j[k+1];Object.assign(T[L],{["j"+i+"a"]:d[0],["j"+i+"b"]:d[1],["j"+i+"c"]:d[2],["j"+i+"d"]:d[3]});d[4].forEach((c,x)=>T[L]["j"+i+"t"+x]=c)}));
 $("#tl").innerHTML=J.map((j,i)=>{const d=j[1];return `<div class="it"><div class="yr yt"><div class="yn">${j[0]}</div></div><article class="jc"><i class="nd"></i><div class="pl"><b>${j[0]}</b><span data-i="j${i}a">${d[0]}</span></div><h3 data-i="j${i}b">${d[1]}</h3><div class="org">${U("pin")}<span data-i="j${i}c">${d[2]}</span></div><p data-i="j${i}d">${d[3]}</p><div class="tg">${d[4].map((x,y)=>`<span data-i="j${i}t${y}">${x}</span>`).join("")}</div></article>
 </div>`}).join("");
@@ -514,7 +516,7 @@ $("#gf").onsubmit=async e=>{
 
 setInterval(()=>{if(gb.open)loadGb(false)},15000);
 
-const MSG={en:["Yay! 🎉","Hello! 👋","Sign the guestbook! ✍️","Contact me! 💼","Boing! 🦘","Welcome! ✨"],id:["Hore! 🎉","Halo! 👋","Isi buku tamu! ✍️","Rekrut saya! 💼","Hop! 🦘","Selamat datang! ✨"]};
+const MSG={en:["Yay! 🎉","Hello! 👋","Sign the guestbook! ✍️","Contact me! 💼","Boing! 🦘","Welcome! ✨"],id:["Hore! 🎉","Halo! 👋","Isi buku tamu! ✍️","Hubungi saya! 💼","Hop! 🦘","Selamat datang! ✨"]};
 const bls=[...document.querySelectorAll(".bl")];let lastM="";
 const pick=()=>{const a=MSG[lang];let m;do{m=a[Math.floor(Math.random()*a.length)]}while(m===lastM);return lastM=m};
 function say(b,txt,ms){const s=b.querySelector(".sb");s.textContent=txt;s.style.setProperty("--o","0px");s.classList.add("on");
