@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>hasbifx</title>
 <meta id="md" name="description" content="Portofolio hasbifx. Membangun sistem web multi-role dan aplikasi mobile offline-first.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +40,7 @@ nav a:hover{background:var(--fg);color:var(--bg)}
 .fl.on{background:var(--bg);opacity:1;filter:none;box-shadow:0 1px 4px #0004}
 #menu{display:none}
 /* hero */
-#home{min-height:100svh;display:flex;flex-direction:column;padding:64px 0 0}
+#home{min-height:87svh;display:flex;flex-direction:column;padding:64px 0 0}
 .hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:30px}
 .pr{display:flex;gap:6px;margin-bottom:8px;align-items:center}
 .pill{border:2px solid var(--fg);border-radius:99px;padding:5px 18px;font-weight:700;font-size:.7rem;background:var(--bg);box-shadow:0 3px 0 var(--fg);animation:drop .6s backwards;animation-delay:calc(var(--i)*.1s)}
@@ -232,6 +230,7 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
  <nav id="nav">
   <a href="#home" data-i="home">Home</a><a href="#about" data-i="about">About</a>
   <a href="#journey" data-i="journey">Journey</a><a href="#guestbook" data-i="guest" onclick="openGb();return false">Guestbook</a><a href="#contact" data-i="contact">Contact</a>
+  <a href="#certs" data-i="ctN">Certificates</a>
  </nav>
  <div class="tools">
   <button class="rb" id="snd" aria-label="Sound" data-ia="sndA"><svg class="i"><use href="#i-snd"/></svg></button>
@@ -284,12 +283,91 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
   <div class="focus"><h3 data-i="fT">My Focus</h3><p data-i="fP">Combining system analysis with robust technical implementation. I focus on building efficient, user-centric web solutions from database design to final deployment.</p>
    <div><svg class="i"><use href="#i-lay"/></svg><span data-i="f1">Full-Stack Systems</span></div><div><svg class="i"><use href="#i-lay"/></svg><span data-i="f2">Database Architecture</span></div></div></div>
  </div>
-</div></section>
+</section>
+  
+<!-- MUSIC / SPOTIFY -->
+<section id="music">
+  <div class="w">
+    <h2 class="st2" data-i="plT" style="text-align:center">My Playlist</h2>
+<p data-i="plD" style="text-align:center;color:var(--mut);margin:12px 0 28px">
+  Songs that keep me company while coding and trading 🎧
+</p>
+    <div class="spotify-box">
+    <iframe
+     src="https://open.spotify.com/embed/playlist/6EdlRSH9gdSOpefNWZQqGI?utm_source=generator"
+     width="100%" height="400" frameborder="0" loading="lazy"
+     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+   </iframe>
+  </div>
+  
+   <div class="spotify-cta">
+   <a class="spotify-btn" href="https://open.spotify.com/playlist/6EdlRSH9gdSOpefNWZQqGI" target="_blank" rel="noopener">
+   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 100 24 12 12 0 000-24zm5.5 17.3a.75.75 0 01-1 .25c-2.8-1.7-6.3-2.1-10.4-1.1a.75.75 0 11-.35-1.45c4.5-1 8.4-.6 11.5 1.3.35.2.45.65.25 1zm1.5-3.3a.94.94 0 01-1.3.3c-3.2-2-8.1-2.6-11.9-1.4a.94.94 0 11-.55-1.8c4.3-1.3 9.7-.7 13.4 1.6.45.3.55.85.35 1.3zm.1-3.4C15.3 8.3 9 8.1 5.4 9.2a1.1 1.1 0 11-.65-2.1c4.2-1.3 11.1-1 15.5 1.6a1.1 1.1 0 01-1.15 1.9z"/></svg>
+   <span data-i="plB">Open in Spotify</span>
+  </a>
+  </div>
+  
+</div>
+</section>
 
+<style>
+.spotify-box{
+  max-width:640px;
+  margin:0 auto;
+  border:3px solid var(--fg);
+  border-radius:20px;
+  box-shadow:6px 6px 0 var(--fg);
+  overflow:hidden;
+  background:var(--bg);}
+  .spotify-cta{text-align:center;margin-top:28px}
+.spotify-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 26px;
+  font-weight:700;font-size:1rem;
+  color:var(--fg);background:var(--bg);
+  border:3px solid var(--fg);
+  border-radius:99px;
+  box-shadow:4px 4px 0 var(--fg);
+  transition:transform .15s,box-shadow .15s,background .15s,color .15s;
+}
+.spotify-btn:hover{background:#1DB954;color:#000;transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--fg)}
+.spotify-btn:active{transform:translate(2px,2px);box-shadow:0 0 0 var(--fg)}
+.spotify-box iframe{display:block;border:0}
+.spotify-btn,.spotify-btn:hover,.spotify-btn:active,.spotify-btn span{text-decoration:none!important}
+</style>
+  
 <section id="journey"><div class="w">
  <h2 class="st2" data-i="jT">My Journey</h2><p class="lead" data-i="jD" style="text-align:center;margin:-20px auto 40px"></p>
  <div class="tl" id="tl"></div>
 </div></section>
+
+<section id="certs"><div class="w">
+ <h2 class="st2" data-i="ctT">Certificates</h2>
+ <p class="lead" data-i="ctD" style="text-align:center;margin:-20px auto 40px">Proof of the milestones I've reached in trading.</p>
+ <div class="certs">
+  <a class="cert" href="sertifikat-1.jpg" target="_blank" rel="noopener">
+   <img src="sertifikat_1.jpg" alt="Propanium Phase One Completed" loading="lazy">
+   <b>Phase One Completed</b><small>Propanium · 02 Nov 2026</small>
+  </a>
+  <a class="cert" href="sertifikat-2.jpg" target="_blank" rel="noopener">
+   <img src="sertifikat_2.jpg" alt="Propanium Evaluation Completed" loading="lazy">
+   <b>Evaluation Completed</b><small>Propanium · 02 Nov 2026</small>
+  </a>
+  <a class="cert" href="sertifikat-3.jpg" target="_blank" rel="noopener">
+   <img src="sertifikat_3.jpg" alt="Propanium Evaluation Passed" loading="lazy">
+   <b>Evaluation Passed</b><small>Propanium · 06 Nov 2026</small>
+  </a>
+ </div>
+</div></section>
+
+<style>
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.cert{display:block;border:2px solid var(--fg);border-radius:24px;padding:14px;background:var(--bg);color:var(--fg);box-shadow:5px 5px 0 var(--fg);text-decoration:none;transition:transform .15s,box-shadow .15s}
+.cert:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--fg)}
+.cert img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--mut)}
+.cert b{display:block;margin:14px 6px 2px;font-size:1.05rem}
+.cert small{display:block;margin:0 6px 6px;color:var(--mut);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+</style>
 
 <section id="contact" class="dk"><div class="w cg">
  <div>
@@ -298,7 +376,7 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
   <div class="cl" data-i="socT">Social Presence</div>
   <div class="soc">
    <a href="https://t.me/hasbifx" aria-label="Telegram"><svg class="i"><use href="#i-tg"/></svg></a>
-   <a href="https://github.com/hasbiclass" aria-label="GitHub"><svg class="i"><use href="#i-gh"/></svg></a>
+   <a href="https://github.com/StyfenSagaa" aria-label="GitHub"><svg class="i"><use href="#i-gh"/></svg></a>
    <a href="https://www.instagram.com/hasbifx" aria-label="Instagram"><svg class="i"><use href="#i-ig"/></svg></a>
   </div>
  </div>
@@ -333,11 +411,11 @@ const SS=(k,v)=>{try{return v===undefined?sessionStorage.getItem(k):sessionStora
 const ic=(b,n)=>b.querySelector("use").setAttribute("href","#i-"+n);
 const T={en:{home:"Home",about:"About",journey:"Journey",guest:"Guestbook",contact:"Contact",open:"Open Collaboration",base:"Based in Banten, ID",today:"Today",scroll:"Scroll Down",hire:"Contact",
 aboutT:"About Me",hi:"Hi, I'm hasbifx",p1:"I am a Junior Web Developer in the field of Information Systems. I like to bridge business needs with technological solutions through system flow analysis and web development using HTML, CSS, and JavaScript.",p2:"I usually sharpen my competitive mindset in the Land of Dawn. As a Mobile Legends player with Immortal Rank, I am used to thinking tactically, and constantly learning to be the best.",cv:"Download Resume",
-jT:"My Journey",jD:"Milestones of growth: from university labs to professional production environments.",
+ctN:"Certificates",ctT:"Certificates",ctD:"Proof of the milestones I've reached in trading.",plB:"Open in Spotify",plT:"My Playlist",plD:"Songs that keep me company while coding and trading 🎧",jT:"My Journey",jD:"Milestones of growth: from university labs to professional production environments.",
 cT:"Let's Start a Project",cD:"Interested in working together? Fill out the form or drop me a direct email.",lbN:"Your Name",lbE:"Your Email",lbS:"Subject",lbM:"Message",send:"Send Message"},
 id:{home:"Beranda",about:"Tentang",journey:"Perjalanan",guest:"Buku Tamu",contact:"Kontak",open:"Menerima Kolaborasi",base:"Berbasis di Banten, ID",today:"Hari ini",scroll:"Gulir ke Bawah",hire:"Hubungi",
 aboutT:"Tentang Saya",hi:"Hai, saya hasbifx.",p1:"Saya seorang Junior Web Developer di bidang Sistem Informasi. Saya suka menjembatani kebutuhan bisnis dengan solusi teknologi lewat analisis alur sistem dan pengembangan web menggunakan HTML, CSS, dan JavaScript.",p2:"Saya biasanya mengasah mental kompetitif saya di Land of Dawn. Sebagai pemain Mobile Legends dengan Rank Immortal, saya terbiasa berpikir taktis, dan terus belajar untuk menjadi yang terbaik.",cv:"Unduh CV",
-jT:"Perjalanan Saya",jD:"Tonggak pertumbuhan: dari lab kampus sampai lingkungan produksi profesional.",
+ctN:"Sertifikat",ctT:"Sertifikat",ctD:"Bukti pencapaian yang sudah saya raih di dunia trading.",plB:"Buka di Spotify",plT:"Playlist Saya",plD:"Lagu yang menemani saya ngoding dan trading 🎧",jT:"Perjalanan Saya",jD:"Tonggak pertumbuhan: dari lab kampus sampai lingkungan produksi profesional.",
 cT:"Mulai Proyek Bersama",cD:"Tertarik bekerja sama? Isi formulir atau kirim email langsung.",lbN:"Nama",lbE:"Email",lbS:"Subjek",lbM:"Pesan",send:"Kirim Pesan"}};
 let lang="en",snd=true;
 function setLang(l){lang=l;R.lang=l;
@@ -366,7 +444,7 @@ document.addEventListener("click",e=>{const t=e.target;if(t.closest("#snd,#theme
 const U=n=>`<svg class="i"><use href="#i-${n}"/></svg>`;
 
 // Data proyek: ganti kotak berwarna dengan <img> jika sudah punya screenshot
-Object.assign(T.en,{pillSI:"INFORMATION SYSTEMS",grad:"School 2026",isT:"Student",cw:"Major:",c1:"TJKT",c2:"Technique",c3:"Network",c4:"Computer",c5:"telecommunications",gpa:"",core:"Core Languages",fT:"My Focus",fP:"Combining system analysis with robust technical implementation. I focus on building efficient, user-centric web solutions from database design to final deployment.",f1:"Full-Stack Systems",f2:"Database Architecture",dEm:"Direct Email",socT:"Social Presence",o1:"Project Collaboration",o2:"Job Opportunity",o3:"General Inquiry",ph2:"Tell me about your project...",ft1:"© 2026 hasbi. All Rights Reserved.",ft2:"Based in Banten, ID · Available for Remote Work",arch:"PROJECT ARCHIVE",tap:"Tap to Open",nodoc:"Documentation has not been added yet.",md:"Portfolio of hasbifx. Building multi-role web systems and offline-first mobile apps.",hmA:"Home",sndA:"Sound",thA:"Dark mode",lgA:"Language",mnA:"Menu",clA:"Close",rcA:"Cancel reply",uni:"SMK PGRI 3 SERANG CITY"});
+Object.assign(T.en,{pillSI:"INFORMATION SYSTEMS",grad:"School 2026",isT:"Student",cw:"Major:",c1:"TJKT",c2:"Technique",c3:"Network",c4:"Computer",c5:"telecommunications",gpa:"",core:"Core Languages",fT:"My Focus",fP:"Combining system analysis with robust technical implementation. I focus on building efficient, user-centric web solutions from database design to final deployment.",f1:"Full-Stack Systems",f2:"Database Architecture",dEm:"Direct Email",socT:"Social Presence",o1:"Project Collaboration",o2:"Job Opportunity",o3:"General Inquiry",ph2:"Tell me about your project...",ft1:"© 2026 hasbifx. All Rights Reserved.",ft2:"Based in Banten, ID · Available for Remote Work",arch:"PROJECT ARCHIVE",tap:"Tap to Open",nodoc:"Documentation has not been added yet.",md:"Portfolio of hasbifx. Building multi-role web systems and offline-first mobile apps.",hmA:"Home",sndA:"Sound",thA:"Dark mode",lgA:"Language",mnA:"Menu",clA:"Close",rcA:"Cancel reply",uni:"SMK PGRI 3 SERANG CITY"});
 Object.assign(T.id,{pillSI:"INFORMATION SYSTEMS",grad:"Sekolah 2026",isT:"Siswa",cw:"Jurusan:",c1:"TJKT",c2:"Teknik",c3:"Jaringan",c4:"Komputer",c5:"Telekomunikasi",gpa:"",core:"Core Languages",fT:"Fokus Saya",fP:"Memadukan analisis sistem dengan implementasi teknis yang kuat. Saya fokus membangun solusi web yang efisien dan berpusat pada pengguna, mulai dari desain database hingga peluncuran akhir.",f1:"Sistem Full-Stack",f2:"Arsitektur Database",dEm:"Email Langsung",socT:"Media Sosial",o1:"Kolaborasi Proyek",o2:"Peluang Kerja",o3:"Pertanyaan Umum",ph2:"Ceritakan tentang proyekmu...",ft1:"© 2026 hasbifx. Seluruh hak cipta dilindungi.",ft2:"Berbasis di Banten, ID · Tersedia untuk Kerja Remote",arch:"ARSIP PROYEK",tap:"Ketuk untuk Membuka",nodoc:"Dokumentasi belum ditambahkan.",md:"Portofolio hasbifx. Membangun sistem web multi-role dan aplikasi mobile offline-first.",hmA:"Beranda",sndA:"Suara",thA:"Mode gelap",lgA:"Bahasa",mnA:"Menu",clA:"Tutup",rcA:"Batal membalas",uni:"SMK PGRI 3 KOTA SERANG"});
 // Journey: [tahun, [EN: tag,judul,organisasi,deskripsi,[chip]], [ID: ...]]. Nama institusi/teknologi sama di kedua bahasa.
 const J=[
