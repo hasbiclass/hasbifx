@@ -197,6 +197,19 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
  .bar{grid-template-columns:1fr 1fr}.bar div:nth-child(2){border-right:0}.bar div:nth-child(-n+2){border-bottom:2px solid var(--fg)}.bar div:nth-child(3){border-right:2px solid var(--fg)}
 }
 @media(prefers-reduced-motion:reduce){.pill,.cc{animation:none!important}html{scroll-behavior:auto!important}}
+@media(min-width:768px){
+ .hero .pr:first-child{justify-content:flex-start!important;padding-left:16%!important;padding-right:0!important}
+}
+.hp{position:absolute;left:-5px;top:-6px;width:60px;height:40px;fill:none;overflow:visible;pointer-events:none}
+.hp .o{stroke:var(--bb);stroke-width:7;stroke-linecap:round}
+.hp .b{stroke:var(--be);stroke-width:3;stroke-linecap:round}
+.hp .c{fill:var(--be);stroke:var(--bb);stroke-width:2.5}
+@media(max-width:760px){
+ .logo{display:none}
+ .tools{display:contents}
+ #menu{order:-1}
+ #snd{margin-left:auto}
+}
 </style>
 </head>
 <body>
@@ -228,11 +241,10 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
 </defs></svg>
 
 <header><div class="w">
-<a class="logo" href="#home" aria-label="Home" data-ia="hmA"><svg viewBox="366 381 350 341" aria-hidden="true"><path class="h" d="M368 381H516V412L478 419V528H604V419L570 412V381H716V412L682 419V686L716 692V722H570V692L604 686V568H478V686L516 692V722H366V692L400 686V419L368 412Z"/></svg></a>
  <nav id="nav">
   <a href="#home" data-i="home">Home</a><a href="#about" data-i="about">About</a>
-  <a href="#journey" data-i="journey">Journey</a><a href="#guestbook" data-i="guest" onclick="openGb();return false">Guestbook</a><a href="#contact" data-i="contact">Contact</a>
-  <a href="#certs" data-i="ctN">Certificates</a>
+  <a href="#journey" onclick="jtab('pj')" data-i="journey">Journey</a>
+  <a href="#journey" onclick="jtab('pc')" data-i="ctN">Certificates</a><a href="#guestbook" data-i="guest" onclick="openGb();return false">Guestbook</a><a href="#contact" data-i="contact">Contact</a>
  </nav>
  <div class="tools">
   <button class="rb" id="snd" aria-label="Sound" data-ia="sndA"><svg class="i"><use href="#i-snd"/></svg></button>
@@ -339,30 +351,40 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
 </style>
   
 <section id="journey"><div class="w">
- <h2 class="st2" data-i="jT">My Journey</h2><p class="lead" data-i="jD" style="text-align:center;margin:-20px auto 40px"></p>
- <div class="tl" id="tl"></div>
-</div></section>
+ <div class="jtabs">
+  <button class="btn" data-p="pj" data-i="jT">My Journey</button>
+  <button class="btn o" data-p="pc" data-i="ctT">Certificates</button>
+ </div>
 
-<section id="certs"><div class="w">
- <h2 class="st2" data-i="ctT">Certificates</h2>
- <p class="lead" data-i="ctD" style="text-align:center;margin:-20px auto 40px">Proof of the milestones I've reached in trading.</p>
- <div class="certs">
-  <a class="cert" href="sertifikat-1.jpg" target="_blank" rel="noopener">
-   <img src="sertifikat_1.jpg" alt="Propanium Phase One Completed" loading="lazy">
-   <b>Phase One Completed</b><small>Propanium · 02 Nov 2026</small>
-  </a>
-  <a class="cert" href="sertifikat-2.jpg" target="_blank" rel="noopener">
-   <img src="sertifikat_2.jpg" alt="Propanium Evaluation Completed" loading="lazy">
-   <b>Evaluation Completed</b><small>Propanium · 02 Nov 2026</small>
-  </a>
-  <a class="cert" href="sertifikat-3.jpg" target="_blank" rel="noopener">
-   <img src="sertifikat_3.jpg" alt="Propanium Evaluation Passed" loading="lazy">
-   <b>Evaluation Passed</b><small>Propanium · 06 Nov 2026</small>
-  </a>
+ <div id="pj">
+  <h2 class="st2" data-i="jT">My Journey</h2><p class="lead" data-i="jD" style="text-align:center;margin:-20px auto 40px"></p>
+  <div class="tl" id="tl"></div>
+ </div>
+
+ <div id="pc" hidden>
+  <h2 class="st2" data-i="ctT">Certificates</h2>
+  <p class="lead" data-i="ctD" style="text-align:center;margin:-20px auto 40px">Proof of the milestones I've reached in trading.</p>
+  <div class="certs">
+   <a class="cert" href="sertifikat-1.jpg" target="_blank" rel="noopener">
+    <img src="sertifikat-1.jpg" alt="Propanium Phase One Completed" loading="lazy">
+    <b>Phase One Completed</b><small>Propanium · 02 Nov 2026</small>
+   </a>
+   <a class="cert" href="sertifikat-2.jpg" target="_blank" rel="noopener">
+    <img src="sertifikat-2.jpg" alt="Propanium Evaluation Completed" loading="lazy">
+    <b>Evaluation Completed</b><small>Propanium · 02 Nov 2026</small>
+   </a>
+   <a class="cert" href="sertifikat-3.jpg" target="_blank" rel="noopener">
+    <img src="sertifikat-3.jpg" alt="Propanium Evaluation Passed" loading="lazy">
+    <b>Evaluation Passed</b><small>Propanium · 06 Nov 2026</small>
+   </a>
+  </div>
  </div>
 </div></section>
 
 <style>
+.jtabs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+.jtabs .btn{padding:10px 18px}
+#pj[hidden],#pc[hidden]{display:none!important}
 .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
 .cert{display:block;border:2px solid var(--fg);border-radius:24px;padding:14px;background:var(--bg);color:var(--fg);box-shadow:5px 5px 0 var(--fg);text-decoration:none;transition:transform .15s,box-shadow .15s}
 .cert:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--fg)}
@@ -370,6 +392,15 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
 .cert b{display:block;margin:14px 6px 2px;font-size:1.05rem}
 .cert small{display:block;margin:0 6px 6px;color:var(--mut);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
 </style>
+
+<script>
+function jtab(id){
+ document.querySelectorAll(".jtabs .btn").forEach(b=>b.classList.toggle("o",b.dataset.p!==id));
+ document.getElementById("pj").hidden=id!=="pj";
+ document.getElementById("pc").hidden=id!=="pc";
+}
+document.querySelectorAll(".jtabs .btn").forEach(b=>b.addEventListener("click",()=>jtab(b.dataset.p)));
+</script>
 
 <section id="contact" class="dk"><div class="w cg">
  <div>
@@ -394,7 +425,7 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
 
 <footer class="dk"><div class="w"><span data-i="ft1">© 2026 hasbifx. All Rights Reserved.</span><span data-i="ft2">Based in Banten, ID · Available for Remote Work</span></div></footer>
 
-<div class="blobs" aria-hidden="true"><div class="bl c"><i class="sh"></i><div class="jp"><div class="bo"><span class="sb"></span><span class="ez"><i></i><i></i></span></div><i class="ft"></i><i class="ft"></i></div></div><div class="bl m"><i class="sh"></i><div class="jp"><div class="bo"><svg class="mg" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg><span class="sb"></span><span class="ez"><i></i><i></i></span></div><i class="ft"></i><i class="ft"></i></div></div></div>
+<div class="blobs" aria-hidden="true"><div class="bl c"><i class="sh"></i><div class="jp"><div class="bo"><span class="sb"></span><span class="ez"><i></i><i></i></span></div><i class="ft"></i><i class="ft"></i></div></div><div class="bl m"><i class="sh"></i><div class="jp"><div class="bo"><svg class="hp" viewBox="0 0 60 40"><path class="o" d="M6 26V22C6 8 16 1 30 1s24 7 24 21v4"/><path class="b" d="M6 26V22C6 8 16 1 30 1s24 7 24 21v4"/><rect class="c" x="1.5" y="19.5" width="10" height="18" rx="4.5"/><rect class="c" x="48.5" y="19.5" width="10" height="18" rx="4.5"/></svg><span class="sb"></span><span class="ez"><i></i><i></i></span></div><i class="ft"></i><i class="ft"></i></div></div></div>
 <button class="btn" id="gbBtn" onclick="openGb()"><svg class="i"><use href="#i-pen"/></svg><span data-i="guest">Guestbook</span><em id="gbN">0</em></button>
 <dialog id="gb">
  <div class="gh"><span class="ico"><svg class="i"><use href="#i-term"/></svg></span><div><b>~/guestbook.log<span class="live">LIVE</span></b><small><span id="gbT">0</span> <span id="gbS">total signatures</span></small></div>
