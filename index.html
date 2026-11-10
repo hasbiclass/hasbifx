@@ -274,7 +274,7 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
  <div class="stack">
   <div class="card">
    <span style="font-size:2rem;display:inline-grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#000">👋</span>
-   <h3 data-i="hi">Hi, I'm hasbifx</h3>
+   <h3 data-i="hi">Hi, I'm Muhammad Hasbi</h3>
    <p data-i="p1"></p><p data-i="p2"></p>
    <a class="btn" href="cv-areston-styfen.pdf" download="CV-hasbifx.pdf"><svg class="i"><use href="#i-doc"/></svg><span data-i="cv">Download Resume</span></a>
   </div>
@@ -391,6 +391,9 @@ dialog[open]{display:flex;flex-direction:column}dialog::backdrop{background:#000
 .cert img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--mut)}
 .cert b{display:block;margin:14px 6px 2px;font-size:1.05rem}
 .cert small{display:block;margin:0 6px 6px;color:var(--mut);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+*{-webkit-tap-highlight-color:transparent}
+:focus:not(:focus-visible){outline:none}
+button,.btn,nav a,.cert{-webkit-user-select:none;user-select:none}
 </style>
 
 <script>
@@ -443,11 +446,11 @@ const S=(k,v)=>{try{return v===undefined?localStorage.getItem(k):localStorage.se
 const SS=(k,v)=>{try{return v===undefined?sessionStorage.getItem(k):sessionStorage.setItem(k,v)}catch(e){return null}};
 const ic=(b,n)=>b.querySelector("use").setAttribute("href","#i-"+n);
 const T={en:{home:"Home",about:"About",journey:"Journey",guest:"Guestbook",contact:"Contact",open:"Open Collaboration",base:"Based in Banten, ID",today:"Today",scroll:"Scroll Down",hire:"Contact",
-aboutT:"About Me",hi:"Hi, I'm hasbifx",p1:"I am a Junior Web Developer in the field of Information Systems. I like to bridge business needs with technological solutions through system flow analysis and web development using HTML, CSS, and JavaScript.",p2:"I usually sharpen my competitive mindset in the Land of Dawn. As a Mobile Legends player with Immortal Rank, I am used to thinking tactically, and constantly learning to be the best.",cv:"Download Resume",
+aboutT:"About Me",hi:"Hi, I'm Muhammad\u00A0Hasbi",p1:"I am a Junior Web Developer in the field of Information Systems. I like to bridge business needs with technological solutions through system flow analysis and web development using HTML, CSS, and JavaScript.",p2:"I usually sharpen my competitive mindset in the Land of Dawn. As a Mobile Legends player with Immortal Rank, I am used to thinking tactically, and constantly learning to be the best.",cv:"Download Resume",
 ctN:"Certificates",ctT:"Certificates",ctD:"Proof of the milestones I've reached in trading.",plB:"Open in Spotify",plT:"My Playlist",plD:"Songs that keep me company while coding and trading 🎧",jT:"My Journey",jD:"Milestones of growth: from university labs to professional production environments.",
 cT:"Let's Start a Project",cD:"Interested in working together? Fill out the form or drop me a direct email.",lbN:"Your Name",lbE:"Your Email",lbS:"Subject",lbM:"Message",send:"Send Message"},
 id:{home:"Beranda",about:"Tentang",journey:"Perjalanan",guest:"Buku Tamu",contact:"Kontak",open:"Menerima Kolaborasi",base:"Berbasis di Banten, ID",today:"Hari ini",scroll:"Gulir ke Bawah",hire:"Hubungi",
-aboutT:"Tentang Saya",hi:"Hai, saya hasbifx.",p1:"Saya seorang Junior Web Developer di bidang Sistem Informasi. Saya suka menjembatani kebutuhan bisnis dengan solusi teknologi lewat analisis alur sistem dan pengembangan web menggunakan HTML, CSS, dan JavaScript.",p2:"Saya biasanya mengasah mental kompetitif saya di Land of Dawn. Sebagai pemain Mobile Legends dengan Rank Immortal, saya terbiasa berpikir taktis, dan terus belajar untuk menjadi yang terbaik.",cv:"Unduh CV",
+aboutT:"Tentang Saya",hi:"Hai, saya Muhammad Hasbi",p1:"Saya seorang Junior Web Developer di bidang Sistem Informasi. Saya suka menjembatani kebutuhan bisnis dengan solusi teknologi lewat analisis alur sistem dan pengembangan web menggunakan HTML, CSS, dan JavaScript.",p2:"Saya biasanya mengasah mental kompetitif saya di Land of Dawn. Sebagai pemain Mobile Legends dengan Rank Immortal, saya terbiasa berpikir taktis, dan terus belajar untuk menjadi yang terbaik.",cv:"Unduh CV",
 ctN:"Sertifikat",ctT:"Sertifikat",ctD:"Bukti pencapaian yang sudah saya raih di dunia trading.",plB:"Buka di Spotify",plT:"Playlist Saya",plD:"Lagu yang menemani saya ngoding dan trading 🎧",jT:"Perjalanan Saya",jD:"Tonggak pertumbuhan: dari lab kampus sampai lingkungan produksi profesional.",
 cT:"Mulai Proyek Bersama",cD:"Tertarik bekerja sama? Isi formulir atau kirim email langsung.",lbN:"Nama",lbE:"Email",lbS:"Subjek",lbM:"Pesan",send:"Kirim Pesan"}};
 let lang="en",snd=true;
